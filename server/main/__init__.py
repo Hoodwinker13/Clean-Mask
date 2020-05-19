@@ -66,3 +66,24 @@ def search():
     )
 
     return create_response(res, 200)
+
+@main_bp.route('/suggestion', methods=['GET'])
+def suggestion():
+    datas = request.get_json()
+    name = datas['name']
+
+    query = {
+        'prefix' : {
+            'name' : name,
+        }
+    }
+
+    res = es.search(
+        index=index_name,
+        doc_type=doc_type,
+        body={
+            'query':query,
+        },
+    )
+
+    return create_response(res, 200)
