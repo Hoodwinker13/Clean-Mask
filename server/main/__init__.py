@@ -2,6 +2,7 @@ import json
 import os
 
 import werkzeug
+from werkzeug.utils import secure_filename
 
 werkzeug.cached_property = werkzeug.utils.cached_property
 from flask import Blueprint
@@ -14,6 +15,7 @@ from elasticsearch import Elasticsearch
 
 main_bp = Blueprint("main", __name__)
 cfg = config_by_name[os.getenv("FLASK_ENV", "dev")]
+file_path = cfg.FILE_PATH
 
 es = Elasticsearch(cfg.ES_HOST)
 index_name = cfg.INDEX_NAME
@@ -87,3 +89,14 @@ def suggestion():
     )
 
     return create_response(res, 200)
+
+@main_bp.route('/fileUpload', methods=['POST'])
+def fileUpload():
+    file = request.files['file']
+
+    try:
+        file.save(os.path.join(file_path, secure_filename(file.filename)))
+    except Exception:
+        return 'Upload Error :('
+    else:
+        return 'Uploaded'

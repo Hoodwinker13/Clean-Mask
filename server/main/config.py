@@ -15,6 +15,8 @@ class DevelopmentConfig(Config):
     INDEX_NAME = "mask"
     DOC_TYPE = "mask_data"
 
+    FILE_PATH = os.path.join(os.path.dirname(__file__), 'static')
+
 
 class ProductionConfig(Config):
     DEBUG = False
