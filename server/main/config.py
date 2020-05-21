@@ -12,8 +12,8 @@ class DevelopmentConfig(Config):
     PORT = "5000"
 
     ES_HOST = "http://localhost:9200"
-    INDEX_NAME = "mask"
-    DOC_TYPE = "mask_data"
+    
+    FILE_PATH = os.path.join(os.path.dirname(__file__), 'static')
 
 
 class ProductionConfig(Config):

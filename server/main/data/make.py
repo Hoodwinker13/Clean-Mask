@@ -9,7 +9,7 @@ class MakeDB() :
         self.es = Elasticsearch("http://localhost:9200")
         self.release_date = '20200509'
 
-    def make_index(self, index_name="mask", doc_type="mask_data"):
+    def make_index_data(self, index_name="mask_data"):
         '''
         Make index(Database), if exists delete it
         '''
@@ -18,24 +18,6 @@ class MakeDB() :
             'body' : {
                 'settings' : {
                     'number_of_shards' : 5,
-                    'analysis' : {
-                        'filter' : {
-                            'ngram_filter' : {
-                                'type' : 'edge_ngram',
-                                'min_gram' : 1,
-                                'max_gram' : 20,
-                            },
-                        },
-                        'analyzer' : {
-                            'ngram_analyzer' : {
-                                'type' : 'custom',
-                                'tokenizer' : 'standard',
-                                'filter' : [
-                                    'ngram_filter',
-                                ],
-                            }
-                        }
-                    }
                 },
                 'mappings' : {
                     'mask_data' : {
@@ -61,7 +43,31 @@ class MakeDB() :
                             'rh' : {'type':'keyword'},
                             'test_date' : {'type':'date'},
                         }
-                    }
+                    },
+                },
+            },
+        }
+
+        if self.es.indices.exists(index=index_name):
+            self.es.indices.delete(index=index_name)
+        print(self.es.indices.create(**params))
+    
+    def make_index_completion(self, index_name="mask_completion"):
+        '''
+        Make index(Database), if exists delete it
+        '''
+        params = {
+            'index' : index_name,
+            'body' : {
+                'settings' : {
+                    'number_of_shards' : 5,
+                },
+                'mappings' : {
+                    'mask_completion' : {
+                        'properties' : {
+                            'name' : {'type':'completion'},
+                        }
+                    },
                 },
             },
         }
@@ -70,7 +76,7 @@ class MakeDB() :
             self.es.indices.delete(index=index_name)
         print(self.es.indices.create(**params))
 
-    def make_list_from_csv(self, index_name="mask", doc_type="mask_data"):
+    def make_list_from_csv(self, index_name="mask_data", doc_type="mask_data", index_name2="mask_completion", doc_type2="mask_completion"):
         csv_data = pd.read_csv('{}-Summary of New Masks.csv'.format(self.release_date),
                                 header=1,
                                 names=['loading_particles', 'mask_type', 'name', 'efficiency_0.3', 'efficiency_0.5',
@@ -80,7 +86,7 @@ class MakeDB() :
                                     ]
                             )
         for idx, data in csv_data.iterrows():
-            doc = {
+            doc_data = {
                 'loading_particles' : data['loading_particles'],
                 'mask_type' : data['mask_type'],
                 'name' : data['name'],
@@ -102,10 +108,15 @@ class MakeDB() :
                 'rh' : data['rh'],
                 'test_date' : datetime.strptime(data['test_date'], '%Y.%m.%d'),
             }
-            res = self.es.index(index=index_name, doc_type=doc_type, id=idx+1, body=doc) # index에 insert
-            print(res)
+            doc_name = {
+                'name' : data['name'],
+            }
+            res_data = self.es.index(index=index_name, doc_type=doc_type, id=idx+1, body=doc_data) # index에 insert
+            res_name = self.es.index(index=index_name2, doc_type=doc_type2, id=idx+1, body=doc_name)
+            print(res_data, res_name)
     
 if __name__ == "__main__":
     db = MakeDB()
-    db.make_index()
+    db.make_index_data()
+    db.make_index_completion()
     db.make_list_from_csv()
