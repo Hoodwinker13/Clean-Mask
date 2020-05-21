@@ -18,8 +18,6 @@ cfg = config_by_name[os.getenv("FLASK_ENV", "dev")]
 file_path = cfg.FILE_PATH
 
 es = Elasticsearch(cfg.ES_HOST)
-index_name = cfg.INDEX_NAME
-doc_type = cfg.DOC_TYPE
 
 def create_response(body, status, content_type="application/json;charset=utf-8", headers=None,
                     mimetype="application/json;charset=utf-8", direct_passthrough=False):
@@ -60,8 +58,8 @@ def search():
     }
 
     res = es.search(
-        index=index_name,
-        doc_type=doc_type,
+        index='mask_data',
+        doc_type='mask_data',
         body={
             'query' : query,
         },
@@ -69,22 +67,33 @@ def search():
 
     return create_response(res, 200)
 
-@main_bp.route('/suggestion', methods=['GET'])
+@main_bp.route('/completion', methods=['GET'])
 def suggestion():
     datas = request.get_json()
     name = datas['name']
 
+    '''
     query = {
         'prefix' : {
             'name' : name,
         }
     }
+    '''
+    query = {
+        'completion' : {
+            'prefix' : name,
+            'completion' : {
+                'field' : 'name',
+                'size' : 5,
+            }
+        }
+    }
 
     res = es.search(
-        index=index_name,
-        doc_type=doc_type,
+        index='mask_completion',
+        doc_type='mask_completion',
         body={
-            'query':query,
+            'suggest':query,
         },
     )
 
