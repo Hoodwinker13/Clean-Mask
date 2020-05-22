@@ -45,8 +45,7 @@ def get():
 
 @main_bp.route('/search', methods=['GET'])
 def search():
-    datas = request.get_json()
-    name = datas['name']
+    name = request.args.get('name')
 
     query = {
         'match' : {
@@ -69,8 +68,7 @@ def search():
 
 @main_bp.route('/completion', methods=['GET'])
 def suggestion():
-    datas = request.get_json()
-    name = datas['name']
+    name = request.args.get('name')
 
     '''
     query = {
