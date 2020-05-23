@@ -71,6 +71,21 @@ def search():
 
     return create_response(res, 200)
 
+@main_bp.route('/getAll', methods=['POST'])
+def allData():
+    res = es.search(
+        index='mask_data',
+        doc_type='mask_data',
+        body={
+            'query':{
+                'match_all' : {},
+            },
+            'size' : 100
+        }
+    )
+
+    return create_response(res, 200)
+
 
 @main_bp.route('/completion', methods=['POST'])
 def suggestion():
