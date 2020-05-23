@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 
 import werkzeug
 from werkzeug.utils import secure_filename
@@ -45,7 +46,11 @@ def get():
 
 @main_bp.route('/search', methods=['GET'])
 def search():
-    name = request.args.get('name')
+    if request.headers['Content-Type'] == 'application/json' :
+        data = request.get_json()
+        name = data['name']
+    else:
+        name = request.args.get('name')
 
     query = {
         'match' : {
@@ -66,17 +71,15 @@ def search():
 
     return create_response(res, 200)
 
+
 @main_bp.route('/completion', methods=['GET'])
 def suggestion():
-    name = request.args.get('name')
+    if request.headers['Content-Type'] == 'application/json' :
+        data = request.get_json()
+        name = data['name']
+    else:
+        name = request.args.get('name')
 
-    '''
-    query = {
-        'prefix' : {
-            'name' : name,
-        }
-    }
-    '''
     query = {
         'completion' : {
             'prefix' : name,
@@ -107,3 +110,45 @@ def fileUpload():
         return 'Upload Error :('
     else:
         return 'Uploaded'
+
+@main_bp.route('/update', methods=['POST'])
+def update() :
+    data = request.get_json()
+
+    try:
+        doc_data = {
+                    'loading_particles' : data['loading_particles'],
+                    'mask_type' : data['mask_type'],
+                    'name' : data['name'],
+                    'efficiency_0.3' : data['efficiency_0.3'],
+                    'efficiency_0.5' : data['efficiency_0.5'],
+                    'efficiency_1' : data['efficiency_1'],
+                    'efficiency_3' : data['efficiency_3'],
+                    'efficiency_5' : data['efficiency_5'],
+                    'efficiency_10' : data['efficiency_10'],
+                    'error_0.3' : data['error_0.3'],
+                    'error_0.5' : data['error_0.5'],
+                    'error_1' : data['error_1'],
+                    'error_3' : data['error_3'],
+                    'error_5' : data['error_5'],
+                    'error_10' : data['error_10'],
+                    'pa' : data['pa'],
+                    'vair' : data['vair'],
+                    't' : data['t'],
+                    'rh' : data['rh'],
+                    'test_date' : datetime.strptime(data['test_date'], '%Y.%m.%d'),
+                }
+        doc_name = {
+                    'name' : data['name'],
+                }
+    except KeyError:
+        return create_response('missing parameter', 400)
+
+    res_data = es.index(index='mask_data', doc_type='mask_data', body=doc_data) # index에 insert
+    res_name = es.index(index='mask_completion', doc_type='mask_completion', body=doc_name)
+
+    if not (isinstance(res_data, dict) or isinstance(res_name, dict)):
+        return 'Failed to Update :('
+    else:
+        return 'Success!'
+    
