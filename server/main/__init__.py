@@ -44,7 +44,7 @@ def get():
     return create_response(body, 200)
 
 
-@main_bp.route('/search', methods=['GET'])
+@main_bp.route('/search', methods=['POST'])
 def search():
     if request.headers['Content-Type'] == 'application/json' :
         data = request.get_json()
@@ -72,7 +72,7 @@ def search():
     return create_response(res, 200)
 
 
-@main_bp.route('/completion', methods=['GET'])
+@main_bp.route('/completion', methods=['POST'])
 def suggestion():
     if request.headers['Content-Type'] == 'application/json' :
         data = request.get_json()
@@ -98,7 +98,15 @@ def suggestion():
         },
     )
 
-    return create_response(res, 200)
+    completion_list = []
+    res_data = res['suggest']['completion'][0]['options']
+    for completion in res_data:
+        completion_list.append(completion['text'])
+
+    return create_response({
+        'names' : completion_list,
+        'length' : len(completion_list)
+    }, 200)
 
 @main_bp.route('/fileUpload', methods=['POST'])
 def fileUpload():
@@ -143,6 +151,8 @@ def update() :
                 }
     except KeyError:
         return create_response('missing parameter', 400)
+    except ValueError:
+        return create_response('Data format Error', 400)
 
     res_data = es.index(index='mask_data', doc_type='mask_data', body=doc_data) # index에 insert
     res_name = es.index(index='mask_completion', doc_type='mask_completion', body=doc_name)
