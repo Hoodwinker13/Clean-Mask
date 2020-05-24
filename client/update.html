@@ -1,0 +1,138 @@
+<html>
+    <head>
+    </head>
+    <style>
+        th, td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        input {
+            border: none;
+        }
+    </style>
+
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/update.js"></script>
+
+        <table style="table-layout: fixed; border: 2px solid; border-collapse: collapse;">
+            <colgroup>
+            <col style="width: 70px">
+            <col style="width: 80px">
+            <col style="width: 100px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 50px">
+            <col style="width: 80px">
+            </colgroup>
+            <thead>
+              <tr>
+                <th rowspan="2">Loading<br>particles</th>
+                <th rowspan="2">Mask<br>Type</th>
+                <th rowspan="2">Mask<br>Name</th>
+                <th colspan="6">Single-pass filtration efficiency</th>
+                <th colspan="6">Error bar</th>
+                <th rowspan="2">ΔP (pa)</th>
+                <th rowspan="2">vair (m/s)</th>
+                <th rowspan="2">T (°C)</th>
+                <th rowspan="2">RH (%)</th>
+                <th rowspan="2">Testing date (YYYY.MM.DD)</th>
+              </tr>
+              <tr>
+                <td>0.3μm</td>
+                <td>0.5<span style="font-weight:400;font-style:normal">μm</span></td>
+                <td>1<span style="font-weight:400;font-style:normal">μm</span></td>
+                <td>3<span style="font-weight:400;font-style:normal">μm</span></td>
+                <td>5<span style="font-weight:400;font-style:normal">μm</span></td>
+                <td>10<span style="font-weight:400;font-style:normal">μm</span></td>
+                <td>0.3<span style="font-weight:400;font-style:normal">μm</span></td>
+                <td>0.5<span style="font-weight:400;font-style:normal">μm</span></td>
+                <td>1<span style="font-weight:400;font-style:normal">μm</span></td>
+                <td>3<span style="font-weight:400;font-style:normal">μm</span></td>
+                <td>5<span style="font-weight:400;font-style:normal">μm</span></td>
+                <td>10<span style="font-weight:400;font-style:normal">μm</span></td>
+              </tr>
+              <tr style="border: 2px solid; border-collapse: collapse;">
+                <td>
+                    <input type="text" id="loading_particles" style="width: 70px;">
+                </td>
+                <td>
+                    <input type="text" id="mask_type" style="width: 80px">
+                </td>
+                <td>
+                    <input type="text" id="name" style="width: 100px">
+                </td>
+                <td>
+                    <input type="text" id="efficiency_0.3" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="efficiency_0.5" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="efficiency_1" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="efficiency_3" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="efficiency_5" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="efficiency_10" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="error_0.3" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="error_0.5" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="error_1" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="error_3" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="error_5" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="error_10" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="pa" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="vair" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="t" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="rh" style="width: 50px">
+                </td>
+                <td>
+                    <input type="text" id="test_date" style="width: 80px">
+                </td>
+                <td>
+                <input type="submit" id="submit"/>
+                </td>
+              </tr>
+            </thead>
+            </table>
+            <br>
+            
+    </body>
+</html>

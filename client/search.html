@@ -1,11 +1,26 @@
 <html>
-    <head>
-        search
-    </head>
     <body>
-        <form action="http://127.0.0.1:5000/search" method="GET">
-            <input type="text" name="name">
-            <input type="submit"/>
-        </form>
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
+        <script type="text/javascript" src="js/search.js"> </script>
+
+        <style>
+            th, td { 
+                border: 1px solid; 
+                border-collapse: collapse;
+            } 
+        </style>
+
+        <div class = "ui-widget">
+            <input type="text" id="name">
+            <input type="submit" id="submit"/>
+        </div>
+        <div>
+            <table>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
