@@ -5,90 +5,92 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Clean Mask</title>
         <style>
-            .SearchBar{
-                position: absolute;
-                top: 1378x;
-                left: 1004px; 
-            }
-            .SearchBar .text{
-                height: 133x;
-                width: 250px;
-                background-color: #ddd;
-                overflow: hidden;
-                visibility: 0.25;
-            }
-            .SearchBar input[type = text]{
-                padding: 23px;
-                font-size: 17px;
-                border: none;
-            }
-            .SearchBar .button{
-                height: 54px;
-                padding: 6px 10px;
-                margin-top: -66px;
-                margin-right: -302px;
-                width: 50px;
-                background-color: #ddd;
-                cursor: pointer;
-            }
-            .Searchbar .button button{
-                margin-top: -7px;
-                height: 67px;
-                width: 75px;
-                margin-right: 50px; 
-            }
-            .SearchBar .button:hover{
-                background: #ccc;
-            }
             .topnav{
-                overflow: hidden;
-                background-color: #e9e9e9;
-            }
-            .topnav a{
-                float: left;
-                display: block;
-                color: black;
-                padding: 14px 16px;
-                font-size: 32px;
-                text-align: center;
-            }
-            .topnav a:hover {
-                background-color: #ddd;
-                color: black;
-            }
-            .topnav a.active {
-                background-color: #2196F3;
-                color: white;
-            }
-            .topnav .search-container button:hover {
-                background: #ccc;
-            }
-            .header a{
-                color: black;
-            }
+                    overflow: hidden;
+                    background-color: #e9e9e9;
+                }
+                .topnav a{
+                    float: left;
+                    display: block;
+                    color: black;
+                    padding: 14px 16px;
+                    font-size: 32px;
+                    text-align: center;
+                }
+                .topnav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+                .topnav a.active {
+                    background-color: #2196F3;
+                    color: white;
+                }
+                .topnav .search-container button:hover {
+                    background: #ccc;
+                }
+                .header a{
+                    color: black;
+                }
+                .SearchBar{
+                    position: absolute;
+                    top: 1378x;
+                    left: 1004px; 
+                }
+                .SearchBar .text{
+                    height: 133x;
+                    width: 250px;
+                    background-color: white;
+                    overflow: hidden;
+                    visibility: 0.25;
+                }
+                .SearchBar input[type = text]{
+                    padding: 23px;
+                    font-size: 17px;
+                    border: none;
+                }
+                .SearchBar .button{
+                    height: 54px;
+                    padding: 6px 10px;
+                    margin-top: -66px;
+                    margin-right: -302px;
+                    width: 50px;
+                    background-color: white;
+                    cursor: pointer;
+                }
+                .Searchbar .button button{
+                    margin-top: -7px;
+                    height: 67px;
+                    width: 75px;
+                    margin-right: 50px; 
+                }
+                .SearchBar .button:hover{
+                    background: white;
+                }
+                .glass{
+                    margin-top: -2px;
+                }
         </style>
-    </head>
-    <body>
-        <h1 color = "blue;" style = "font-size: 72px;">
-            <center>
-                <div class = "header"><a style="text-decoration:none" href= "C:\Users\mjune\.vscode\code\index.html">Clean Mask</a></div>
+        </head>
+        <body>
+            <h1 color = "blue;" style = "font-size: 72px;">
+                <center>
+                    <div class = "header"><a style="text-decoration:none" href= "./index.html">Clean Mask</a></div>
+                </center>
+            </h1>
+            <div class = "SearchBar">
+                <center>
+                <div class = "text"><input type="text" placeholder="Ex. Mask Name: Graphene"></div>
+                <div class = "button"><button type="submit"><i class="fa fa-search"><div class = glass><img src = "C:\Users\mjune\Downloads\magnifying glass.jpg" width = 65></div></i></button></div>
             </center>
-        </h1>
-        <div class = "SearchBar">
-            <center>
-            <div class = "text"><input type="text" placeholder="Type + Mask: N95 Graphene"></div>
-            <div class = "button"><button type="submit"><i class="fa fa-search"></i></button></div>
-            
-        </center>
-    </div>
+        </div>
         <div class = "topnav">
-                    <a href="C:\Users\mjune\.vscode\code\about.html">About</a>
+                    <a href=".\about.html">About</a>
         
-                    <a href="C:\Users\mjune\.vscode\code\procedures.html">Procedure</a>
+                    <a href=".\procedures.html">Procedure</a>
                
                     
-                    <a href="C:\Users\mjune\.vscode\code\setup.html">Setup</a>
-                    <a href="C:\Users\mjune\.vscode\code\data.html">Data</a>
+                    <a href=".\setup.html">Setup</a>
+                    <a href=".\data.html">Data</a>
     
         </div>
     <p style="text-align:right">(Version: May 9, 2020)</p>
@@ -96,17 +98,19 @@
         <div style="width: 1000">
         <p>
 <left>This document describes the capabilities of the Ju Li’s Lab (in Department of Nuclear Science
-and Engineering, MIT) to perform tests on filtration materials/devices (preferably with low air
+and Engineering, MIT) to perform tests on    filtration materials/devices (preferably with low air
 resistance, including HVAC filters, air purifiers, face masks and respirators), for filtration
 efficiency and pressure drop. </left><br>
         </p>
         </div>
     </center>
-    <div style = "font-size: 18px"><strong><em><u>Equipment: </u></em></strong></div>
-<img src="./img/test.png" alt = "Image for designing experiment" width = 1000>
-<img src = "C:/Users/mjune/OneDrive/Pictures/MaskExperiment#2.PNG" alt = "Image for designing experiment" width = 500>
-<img src = "C:/Users/mjune/OneDrive/Pictures/MaskExperiment#3.PNG" alt = "Image for designing experiment" width = 500>
-    <center>a) Whole apparutus</center>
+    <div style = "font-size: 25px"><strong><em><u>Equipment: </u></em></strong></div>
+    <center><img src=".\image\MaskExperiment1.PNG" alt = "Image for designing experiment" width = 1000>
+<br><p style= "font-size: 20px">a) Whole apparutus</p></center>
+<left><img src = ".\image\MaskExperiment2.PNG" alt = "Image for designing experiment" width = 500></left>
+
+<img src = ".\image\MaskExperiment3.PNG" alt = "Image for designing experiment" width = 500>
+<p>(b) Filter/mask test (c) Cartridge test</p>    
     <div style="width: 800;">
     <p style="font-size: 18px;" style = "font-family: 'Times New Roman';"  >
         The aerosol testing apparatus comprises the following pieces of equipment:<br><br>

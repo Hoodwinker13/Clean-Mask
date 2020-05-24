@@ -1,5 +1,11 @@
 <html>
     <body style="background-color:powderblue;"></body>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
     <head>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,29 +72,65 @@
             .SearchBar .button:hover{
                 background: #ccc;
             }
+            .glass{
+                margin-top: -2px;
+            }
     </style>
     </head>
     <body>
         <h1 color = "blue;" style = "font-size: 72px;">
             <center>
-                <div class = "header"><a style="text-decoration:none" href= "C:\Users\mjune\.vscode\code\index.html">Clean Mask</a></div>
+                <div class = "header"><a style="text-decoration:none" href= "./index.html">Clean Mask</a></div>
             </center>
         </h1>
         <div class = "SearchBar">
             <center>
-            <div class = "text"><input type="text" placeholder="Type + Mask: N95 Graphene"></div>
-            <div class = "button"><button type="submit"><i class="fa fa-search"></i></button></div>
+            <div class = "text"><input type="text" placeholder="Ex. Mask Name: Graphene"></div>
+            <div class = "button"><button type="submit"><i class="fa fa-search"><div class = glass><img src = "C:\Users\mjune\Downloads\magnifying glass.jpg" width = 65></div></i></button></div>
         </center>
     </div>
-        <div class = "topnav">
-                    <a href="C:\Users\mjune\.vscode\code\about.html">About</a>
+    <div class = "topnav">
+        <a href="./about.html">About</a>
+
+        <a href="./procedures.html">Procedure</a>
+   
         
-                    <a href="C:\Users\mjune\.vscode\code\procedures.html">Procedure</a>
-               
-                    <a href="C:\Users\mjune\.vscode\code\setup.html">Setup</a>
-                    <a href="C:\Users\mjune\.vscode\code\data.html">Data</a>
-    
-        </div>
+        <a href="./setup.html">Setup</a>
+        <a href="./data.html">Data</a>
+
+</div>
+    <p>
+        <strong><em><u>Procedures</u></em></strong><br>
+        The N95 respirators were cut into pieces \((~ 70 mm × 70 mm)\) and tested in a circular acrylic
+air duct with an inner diameter of \(50 mm\). Indoor ambient aerosols or KCl aerosols were
+loaded as the pollutant source. The number concentrations of \(0.3-10 μm\) particles were
+measured by an optical particle counter (Aerotrak 9306, TSI Inc., USA). The concentrations
+were record every \(1\) min for \(2\) times upstream the respirator filter and then 2 times
+downstream. The single-pass filtration efficiency \(η(d_p ) \)of particles with a certain size of \(d_p\)
+\((μm)\) was calculated by:<br>$$η(d_p ) = \biggl(\dfrac{C_{up}(d_p)-C_{down}(d_p)}{C_{up}(d_p)}\times 100\%\biggr)$$
+where \(C_{up}\) and \(C_{down}\) are the average particle number concentrations (pcs/L) at upstream and
+downstream of the filter, respectively.<br>
+<br>
+The pressure drop across the respirator filter was measured by a differential gauge. The air
+temperature, relative humidity, and filtration velocity were measured by an
+airflow/temperature meter at the air duct exhaust.<br>
+<br>
+<strong><em><u>Notes</u></em></strong>
+<br>
+1. Sample size: \(5\) cm diameter disk (active area = \(19.6 cm^2\) )<br>
+2. Ambient aerosol: simply use indoor air in the lab, temperature \(T = 25 ± °C\) (not controlled),
+relative humidity \(RH = 30 ± 20\%\) (not controlled), \(0.3\) μm partic<br>le number concentration &lt;
+\(10^4\) pcs/L, typical aerosol size range: \(0.3-1 μm.\)
+3. KCl aerosol: using \(10\) wt% KCl solution, pumping at 1 L/min. Temperature \(T = 25 ± °C\)
+(not controlled), relative humidity \(RH = 30 ± 20\%\) (not controlled), \(0.3\) μm particle number
+concentration &lt; \(3×10^4\) pcs/L, typical aerosol size range: \(0.3-5 μm.\)<br>
+4. Filter pre-conditioning: none<br>
+5. Flow rate: face velocity &gt; \(0.1 m/s\) (preferably &gt; \(0.3 m/s,\) optional).<br>
+6. Number of tests: \(3]) total (optional).<br>
+7. Filtration efficiency reported as a function of time (optional), filtration pressure reported as
+a function of time (optional), filtration efficiency reported as a function of particle size
+(optional)
+    </p>
     </body>
 
 </html>
