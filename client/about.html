@@ -1,5 +1,5 @@
 <html>
-    <body style="background-color:powderblue;"></body>
+    <body style="background-color:#031829;"></body>
     <head>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +7,35 @@
     <style>
         .topnav{
                 overflow: hidden;
-                background-color: #e9e9e9;
+                background-color: #010b13;
             }
-            .topnav a{
+            .topnav .title a{
                 float: left;
                 display: block;
-                color: black;
+                color: white;
                 padding: 14px 16px;
-                font-size: 32px;
+                font-size: 30px;
                 text-align: center;
+                overflow:hidden;
+                text-decoration: none;
             }
-            .topnav a:hover {
+            .topnav .texts a{
+                float:left;
+                display:block;
+                color:white;
+                padding:14px 16px;
+                font-size:20px;
+                text-align:center;
+                overflow:hidden;
+                text-decoration:none;
+            }
+            .topnav .texts a:hover {
                 background-color: #ddd;
                 color: black;
+            }
+            .topnav .title a:hover{
+                background-color: black;
+                color:white;
             }
             .topnav a.active {
                 background-color: #2196F3;
@@ -72,11 +88,6 @@
     </style>
     </head>
     <body>
-        <h1 color = "blue;" style = "font-size: 72px;">
-            <center>
-                <div class = "header"><a style="text-decoration:none" href= "./index.html">Clean Mask</a></div>
-            </center>
-        </h1>
         <div class = "SearchBar">
             <center>
             <div class = "text"><input type="text" placeholder="Ex. Mask Name: Graphene"></div>
@@ -84,6 +95,10 @@
         </center>
     </div>
     <div class = "topnav">
+        <div class = "title">
+            <a href="./index.html">Clean Mask</a>
+        </div>
+        <div class = "texts">
         <a href="./about.html">About</a>
 
         <a href="./procedures.html">Procedure</a>
@@ -91,7 +106,7 @@
         
         <a href="./setup.html">Setup</a>
         <a href="./data.html">Data</a>
-
+    </div>
 </div>
     </body>
 

@@ -1,5 +1,5 @@
 <html>
-    <body style="background-color:powderblue;"></body>
+    <body style="background-color: #031829;"></body>
     <head>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +7,35 @@
     <style>
         .topnav{
                 overflow: hidden;
-                background-color: #e9e9e9;
+                background-color:#010b13;
             }
-            .topnav a{
+            .topnav .title a{
                 float: left;
                 display: block;
-                color: black;
+                color: white;
                 padding: 14px 16px;
-                font-size: 32px;
+                font-size: 30px;
                 text-align: center;
+                overflow:hidden;
+                text-decoration: none;
             }
-            .topnav a:hover {
-                background-color: #ddd;
+            .topnav .texts a{
+                float:left;
+                display:block;
+                color:white;
+                padding:14px 16px;
+                font-size:20px;
+                text-align:center;
+                overflow:hidden;
+                text-decoration:none;
+            }
+            .topnav .texts a:hover {
+                background-color: white;
                 color: black;
+            }
+            .topnav .title a:hover{
+                background-color: black;
+                color:white;
             }
             .topnav a.active {
                 background-color: #2196F3;
@@ -69,30 +85,37 @@
             .glass{
                 margin-top: -2px;
             }
-            table,
+            table, tbody,
             td {
-                border: 1px solid #333;
+                border: 1px solid black;
+                color:black;
+                background-color: white;
+                text-align: center;
+                margin-top:100px;
             }
             thead,
             tfoot {
-                background-color: #333;
-                color: #fff;
+                background-color: white;
+                color: black;
+                border: 1px solid black;
+            }
+            .ui-widget{
+                float: right;
+                margin-right: 0px;
+                margin-top:-50px;
             }
     </style>
     </head>
     <body>
-        <h1 color = "blue;" style = "font-size: 72px;">
-            <center>
-                <div class = "header"><a style="text-decoration:none" href= "./index.html">Clean Mask</a></div>
-            </center>
-        </h1>
-        <div class = "SearchBar">
-            <center>
-            <div class = "text"><input type="text" placeholder="Ex. Mask Name: Graphene"></div>
-            <div class = "button"><button type="submit"><i class="fa fa-search"><div class = glass><img src = "C:\Users\mjune\Downloads\magnifying glass.jpg" width = 65></div></i></button></div>
-        </center>
-    </div>
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
+        <script type="text/javascript" src="js/search.js"> </script>
     <div class = "topnav">
+        <div class = "title">
+            <a href="./index.html">Clean Mask</a>
+        </div>
+        <div class = "texts">
         <a href="./about.html">About</a>
 
         <a href="./procedures.html">Procedure</a>
@@ -100,300 +123,67 @@
         
         <a href="./setup.html">Setup</a>
         <a href="./data.html">Data</a>
-
+        </div>
 </div>
-    <div class = "table">
-        <table style = "border: black;" stlye = "border: 3px;" style="width:100%">
-            <thead>
-                <tr>
-                <th rowspan = "2">No.</th>
-                <th rowspan = "2">Loading particles</th>
-                <th rowspan = "2">Type</th>
-                <th rowspan = "2">MASKS</th>
-                <th colspan = "6">Single-pass filteration efficiency</th>
-                <th colspan = "6">Error bar</th>
-                <th rowspan = "2">P</th>
-                <th rowspan = "2">vair</th>
-                <th rowspan = "2">T(C)</th>
-                <th rowspan = "2">RH(%)</th>
-                <th rowspan = "2">Testing date</th>
-            </tr>
-            </thead>
+
+<div class= "ui-widget"><input type = "text" id = "name"><input type = "submit" id="submit"/></div>
+        
+    <div>
+        <table style="table-layout: fixed; border: 2px solid; border-collapse: collapse;">
+                <colgroup>
+                    <col style="width: 70px">
+                    <col style="width: 80px">
+                    <col style="width: 100px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 80px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th rowspan="2">Loading<br>particles</th>
+                        <th rowspan="2">Mask<br>Type</th>
+                        <th rowspan="2">Mask<br>Name</th>
+                        <th colspan="6">Single-pass filtration efficiency</th>
+                        <th colspan="6">Error bar</th>
+                        <th rowspan="2">ΔP (pa)</th>
+                        <th rowspan="2">vair (m/s)</th>
+                        <th rowspan="2">T (°C)</th>
+                        <th rowspan="2">RH (%)</th>
+                        <th rowspan="2">Testing date (YYYY.MM.DD)</th>
+                      </tr>
+                      <tr>
+                        <td>0.3μm</td>
+                        <td>0.5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>1<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>3<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>10<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>0.3<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>0.5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>1<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>3<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>10<span style="font-weight:400;font-style:normal">μm</span></td>
+                      </tr>
             <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>0.3um</td>
-                <td>0.5um</td>
-                <td>1um</td>
-                <td>3um</td>
-                <td>5um</td>
-                <td>10um</td>
-                <td>0.3um</td>
-                <td>0.5um</td>
-                <td>1um</td>
-                <td>3um</td>
-                <td>5um</td>
-                <td>10um</td>
-            </tr>   
-            <tr>
-                <td>1</td>
-                <td>Ambient</td>
-                <td>N95</td>
-                <td>3M1860</td>
-                <td>97.66%</td>
-                <td>99.05%</td>
-                <td>99.68%</td>
-                <td>100.00%</td>
-                <td>0%</td>
-                <td>0%</td>
-                <td>0.81%</td>
-                <td>0.38%</td>
-                <td>0.03%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>186.1</td>
-                <td>0.3</td>
-                <td>24.1</td>
-                <td>22.5</td>
-                <td>4/4/2020</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Ambient</td>
-                <td>N95</td>
-                <td>Halyard</td>
-                <td>99.91%</td>
-                <td>99.95%</td>
-                <td>100.00%</td>
-                <td>100.00%</td>
-                <td>100.00%</td>
-                <td>0%</td>
-                <td>0.02%</td>
-                <td>0.05%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>190.1</td>
-                <td>0.1</td>
-                <td>24.3</td>
-                <td>22.7</td>
-                <td>4/4/2020</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Ambient</td>
-                <td>N95</td>
-                <td>3M8210</td>
-                <td>98.09%</td>
-                <td>99.42%</td>
-                <td>99.82%</td>
-                <td>100.00%</td>
-                <td>100.00%</td>
-                <td>0%</td>
-                <td>0.21%</td>
-                <td>0.25%</td>
-                <td>0.21%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>187.8</td>
-                <td>0.3</td>
-                <td>24.6</td>
-                <td>22.1</td>
-                <td>4/4/2020</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Ambient</td>
-                <td>N95</td>
-                <td>3M9210</td>
-                <td>99.75%</td>
-                <td>99.92%</td>
-                <td>100.00%</td>
-                <td>100.00%</td>
-                <td>100.00%</td>
-                <td>0%</td>
-                <td>0.11%</td>
-                <td>0.11%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>190.6</td>
-                <td>0.1</td>
-                <td>24.6</td>
-                <td>21.9</td>
-                <td>4/4/2020</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Ambient</td>
-                <td>N95</td>
-                <td>3M1860</td>
-                <td>98.59%</td>
-                <td>99.49%</td>
-                <td>99.79%</td>
-                <td>100.00%</td>
-                <td>100.00%</td>
-                <td>0%</td>
-                <td>0.10%</td>
-                <td>0.23%</td>
-                <td>0.42%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>188.2</td>
-                <td>0.1</td>
-                <td>23.3</td>
-                <td>27.9</td>
-                <td>4/9/2020</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Ambient</td>
-                <td>KN95</td>
-                <td>SNIPPET(bluebag)</td>
-                <td>8.53%</td>
-                <td>29.42%</td>
-                <td>80.95%</td>
-                <td>77.78%</td>
-                <td>100.00%</td>
-                <td>100.00%</td>
-                <td>0.38%</td>
-                <td>2.72%</td>
-                <td>8.67%</td>
-                <td>59.16%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>185.3</td>
-                <td>0.3</td>
-                <td>23.4</td>
-                <td>47.2</td>
-                <td>4/13/2020</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Ambient</td>
-                <td>FF92</td>
-                <td>KANGLV9501</td>
-                <td>99.02%</td>
-                <td>99.53%</td>
-                <td>100.00%</td>
-                <td>100.00%</td>
-                <td>100.00%</td>
-                <td>0.27%</td>
-                <td>0.57%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>180.1</td>
-                <td>0.4</td>
-                <td>24.2</td>
-                <td>47.2</td>
-                <td>4/13/2020</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Ambient</td>
-                <td>KN95</td>
-                <td>KN95 WB</td>
-                <td>-20.54%</td>
-                <td>-44.42%</td>
-                <td>3.85%</td>
-                <td>100.00%</td>
-                <td>100.00%</td>
-                <td>0%</td>
-                <td>-1.15%</td>
-                <td>-4.86%</td>
-                <td>1.26%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>56</td>
-                <td>0.4</td>
-                <td>24.4</td>
-                <td>45.9</td>
-                <td>4/13/2020</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Ambient</td>
-                <td>KN95</td>
-                <td>KN95 WB</td>
-                <td>-24.84%</td>
-                <td>-41.16%</td>
-                <td>5.88%</td>
-                <td>40.00%</td>
-                <td>100.00%</td>
-                <td>0%</td>
-                <td>-2.11%</td>
-                <td>-8.07%</td>
-                <td>2.98%</td>
-                <td>52.35%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>77.8</td>
-                <td>0.8</td>
-                <td>24.3</td>
-                <td>45.9</td>
-                <td>4/13/2020</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Ambient</td>
-                <td>KN95</td>
-                <td>GB2626-2006</td>
-                <td>96.78%</td>
-                <td>98.94%</td>
-                <td>98.61%</td>
-                <td>0.00%</td>
-                <td>100.00%</td>
-                <td>0.00%</td>
-                <td>0.49%</td>
-                <td>0.43%</td>
-                <td>2.98%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>186.6</td>
-                <td>0.4</td>
-                <td>24.5</td>
-                <td>45.1</td>
-                <td>4/13/2020</td>  
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>Ambient</td>
-                <td>KN95</td>
-                <td>Vhold VH95</td>
-                <td>94.79%</td>
-                <td>98.34%</td>
-                <td>100.00%</td>
-                <td>0.00%</td>
-                <td>100.00%</td>
-                <td>0.00%</td>
-                <td>0.50%</td>
-                <td>1.26%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>254.3</td>
-                <td>0.4</td>
-                <td>24.3</td>
-                <td>46.9</td>
-                <td>4/13/2020</td>
-            </tr>
-        </tbody>
+            </tbody>
         </table>
     </div>
+    <script type="text/javascript" src="js/data.js"> </script>
     </body>
 
 </html>

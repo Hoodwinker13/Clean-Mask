@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<body style="background-color:powderblue;"></body>
+<body style="background-color: black;"></body>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,20 +10,35 @@
                 overflow: hidden;
                 background-color: black;
             }
-            .topnav a{
+            .topnav .title a{
                 float: left;
                 display: block;
                 color: white;
                 padding: 14px 16px;
-                font-size: 20px;
+                font-size: 30px;
                 text-align: center;
                 overflow: hidden;
                 text-decoration: none;
             }
-            .topnav a:hover {
-                background-color:#2196F3;
-                color: black;
+            .topnav .texts a{
+                float:left;
+                display:block;
+                color: white;
+                padding: 14px 16px;
+                font-size:20px;
+                text-align:center;
+                overflow:hidden;
+                text-decoration:none;
             }
+            .topnav .texts a:hover{
+                background-color: #2196f3;
+                color:black;
+            }
+            .topnav .title a:hover {
+                background-color: black;
+                color: white;
+            }
+            
             .topnav a.active {
                 background-color: #2196F3;
                 color: white;
@@ -76,25 +91,44 @@
                 text-align: right;
             }
             .search form{
-                margin-left:180px;
-                margin-top:-215px;
-                
+                text-align: right;
+                margin-top:-820px;
+            }
+            .search .text input{
+                text-align: center;
+                height:30px;
+                width: 400px;
+                opacity: 0.5;
+                color: black;
+                font-size:24px;
+                font-style:normal;
+                font-family: 'Times New Roman', Times, serif;
+                border-style:inset;
+            }
+            .search input{
+                height: 30px;
+                opacity: 0.8;
+                border:lightseagreen;
+                background-color:lightseagreen;
             }
             footer{
-                margin-top:215px;
+                position: absolute;
+                bottom:0;
+                width: 100%;
+                height: 2.5rem;
+                
             }
     </style>
     </head>
     <body>
-
+        
 <div class = "topnav">
+    <div class = "title">
     <a href="./index.html">Clean Mask</a>
+</div>
     <div class = "texts">
     <a href="./about.html">About</a>
-
     <a href="./procedures.html">Procedure</a>
-
-    
     <a href="./setup.html">Setup</a>
     <a href="./data.html">Data</a>
     </div>
@@ -102,7 +136,17 @@
 <img src ="C:/Users/mjune/Downloads/mask.jpg" width = 100%>
 <a href="https://www.vecteezy.com/free-vector/covid-19">Covid 19 Vectors by Vecteezy</a>
 <div class = "search">
-<form action="http://127.0.0.1:5000/search" method="GET" enctype="application/json"><input type = "text" name = "name"><input type = "submit"/></form>
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
+        <script type="text/javascript" src="js/search.js"> </script>
+<div class= "ui-widget"><input type = "text" id = "name"><input type = "submit" id="submit"/></div>
+</div>
+<div>
+    <table><tbody></tbody>
+
+    </table>
+
 </div>
 </body>
 <footer>

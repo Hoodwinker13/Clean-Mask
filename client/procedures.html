@@ -1,5 +1,5 @@
 <html>
-    <body style="background-color:powderblue;"></body>
+    <body style="background-color:#031829;"></body>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
       </script>
@@ -13,19 +13,34 @@
     <style>
         .topnav{
                 overflow: hidden;
-                background-color: #e9e9e9;
+                background-color: #010b13;
             }
-            .topnav a{
+            .topnav .title a{
                 float: left;
                 display: block;
-                color: black;
+                color: white;
                 padding: 14px 16px;
-                font-size: 32px;
+                font-size: 30px;
                 text-align: center;
+                overflow:hidden;
+                text-decoration:none;
             }
-            .topnav a:hover {
-                background-color: #ddd;
+            .topnav .texts a{
+                float:left;
+                display:block;
+                color:white;
+                padding:14px 16px;
+                font-size:20px;
+                text-align:center;
+                overflow:hidden;
+                text-decoration:none;
+            }
+            .topnav .texts a:hover {
+                background-color: white;
                 color: black;
+            }
+            .topnav .title a:hover{
+                background-color: #2196F3
             }
             .topnav a.active {
                 background-color: #2196F3;
@@ -75,14 +90,12 @@
             .glass{
                 margin-top: -2px;
             }
+            .paragraph{
+                color:white;
+            }
     </style>
     </head>
     <body>
-        <h1 color = "blue;" style = "font-size: 72px;">
-            <center>
-                <div class = "header"><a style="text-decoration:none" href= "./index.html">Clean Mask</a></div>
-            </center>
-        </h1>
         <div class = "SearchBar">
             <center>
             <div class = "text"><input type="text" placeholder="Ex. Mask Name: Graphene"></div>
@@ -90,6 +103,10 @@
         </center>
     </div>
     <div class = "topnav">
+        <div class = "title">
+            <a href="./index.html">Clean Mask</a>
+        </div>
+        <div class = "texts">
         <a href="./about.html">About</a>
 
         <a href="./procedures.html">Procedure</a>
@@ -97,10 +114,11 @@
         
         <a href="./setup.html">Setup</a>
         <a href="./data.html">Data</a>
-
+    </div>
 </div>
+<div class = "paragraph">
     <p>
-        <strong><em><u>Procedures</u></em></strong><br>
+        <br><h2><strong><em><u>Procedures</u></em></strong><br><br></h2>
         The N95 respirators were cut into pieces \((~ 70 mm × 70 mm)\) and tested in a circular acrylic
 air duct with an inner diameter of \(50 mm\). Indoor ambient aerosols or KCl aerosols were
 loaded as the pollutant source. The number concentrations of \(0.3-10 μm\) particles were
@@ -115,7 +133,7 @@ The pressure drop across the respirator filter was measured by a differential ga
 temperature, relative humidity, and filtration velocity were measured by an
 airflow/temperature meter at the air duct exhaust.<br>
 <br>
-<strong><em><u>Notes</u></em></strong>
+<h2><strong><em><u>Notes</u></em></strong></h2>
 <br>
 1. Sample size: \(5\) cm diameter disk (active area = \(19.6 cm^2\) )<br>
 2. Ambient aerosol: simply use indoor air in the lab, temperature \(T = 25 ± °C\) (not controlled),
@@ -131,6 +149,7 @@ concentration &lt; \(3×10^4\) pcs/L, typical aerosol size range: \(0.3-5 μm.\)
 a function of time (optional), filtration efficiency reported as a function of particle size
 (optional)
     </p>
+</div>
     </body>
 
 </html>
