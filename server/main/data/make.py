@@ -102,7 +102,7 @@ class MakeDB() :
                 'error_3' : data['error_3'] if data['error_3'] != '#DIV/0!' else 'null',
                 'error_5' : data['error_5'] if data['error_5'] != '#DIV/0!' else 'null',
                 'error_10' : data['error_10'] if data['error_10'] != '#DIV/0!' else 'null',
-                'pa' : data['pa'],
+                'pa' : str(round(float(data['pa']),2)),
                 'vair' : data['vair'],
                 't' : data['t'],
                 'rh' : data['rh'],
