@@ -44,8 +44,8 @@ $(document).ready(function() {
             "t" : t,
             "rh" : rh,
             "test_date" : test_date
+            
         };
-        
         $.ajax({
             url:uri,
             type:"POST",
