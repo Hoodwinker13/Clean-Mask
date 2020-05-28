@@ -13,7 +13,7 @@ $(document).ready(function() {
 
             success:function(data) {
                 localStorage['search_data'] = JSON.stringify(data);
-                window.location.href = "search.html";
+                window.location.href = "data.html";
             },
             error:function(data) {
                 alert("error");

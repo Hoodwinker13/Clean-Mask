@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    if(localStorage['search_data'] == null){
     $.ajax({
         url:"http://localhost:5000/getAll",
         type:"POST",
@@ -39,4 +40,5 @@ $(document).ready(function() {
             alert("error");
         }
     });
+}
 });

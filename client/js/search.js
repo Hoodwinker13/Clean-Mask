@@ -2,7 +2,6 @@ $(document).ready(function() {
     if(localStorage['search_data'] != null) {
         data = $.parseJSON(localStorage['search_data']);
         localStorage.clear();
-
         $("table tbody").remove();
         data = data['hits']['hits'];
         var html = '<tbody>';
