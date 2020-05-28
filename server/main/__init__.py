@@ -77,6 +77,9 @@ def allData():
         index='mask_data',
         doc_type='mask_data',
         body={
+            'sort': {
+                'name':'asc'
+            },
             'query':{
                 'match_all' : {},
             },
