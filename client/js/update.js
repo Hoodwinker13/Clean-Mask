@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-    $("#submit").click(function() {
+    $("#update").click(function() {
         var loading_particles = document.getElementById('loading_particles').value;
         var mask_type = document.getElementById('mask_type').value;
         var name = document.getElementById('name').value;
@@ -45,7 +45,7 @@ $(document).ready(function() {
             "rh" : rh,
             "test_date" : test_date
         };
-
+        
         $.ajax({
             url:uri,
             type:"POST",
@@ -54,6 +54,7 @@ $(document).ready(function() {
 
             success: function(data) {
                 alert("Success!");
+                document.getElementById("my_mask").reset();
             },
             error: function(data) {
                 alert(data.responseText);

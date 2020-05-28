@@ -6,6 +6,7 @@
     <title>Clean Mask</title>
     <style>
         .topnav{
+            
                 overflow: hidden;
                 background-color: #010b13;
             }
@@ -85,28 +86,68 @@
             .glass{
                 margin-top: -2px;
             }
+        .about{
+            color:white;
+            margin-left:55px;
+            margin-top:-10px;   
+        }
+        .vl{
+            height: 750px;
+            position:absolute;
+            margin-left: 50px;
+        }
+        .vl2{
+            border-left:0.1px solid grey;
+            height:750px;
+            position:absolute;
+            margin-left:1350;
+        }
+        .ui-widget{
+                float:right;
+                margin-right: 0px;
+                margin-top:-50px;
+            }
     </style>
     </head>
     <body>
-        <div class = "SearchBar">
-            <center>
-            <div class = "text"><input type="text" placeholder="Ex. Mask Name: Graphene"></div>
-            <div class = "button"><button type="submit"><i class="fa fa-search"><div class = glass><img src = "C:\Users\mjune\Downloads\magnifying glass.jpg" width = 65></div></i></button></div>
-        </center>
-    </div>
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
+        <script type="text/javascript" src="js/search.js"> </script>
     <div class = "topnav">
         <div class = "title">
             <a href="./index.html">Clean Mask</a>
         </div>
         <div class = "texts">
-        <a href="./about.html">About</a>
+        <a href="./about.html"style = "color:010b13;background-color: white" >About</a>
 
         <a href="./procedures.html">Procedure</a>
    
         
         <a href="./setup.html">Setup</a>
         <a href="./data.html">Data</a>
+        <a href="./data input.html">Data Input</a>
     </div>
+</div>
+
+<div class= "ui-widget"><input type = "text" id = "name"><input type = "submit" id="submit"/></div>
+<div class = "vl"></div>
+<div class = "vl2"></div>
+<div class = "about">
+    <h2>How good is the air filtration efficiency of my N95 or KN95 masks?</h2>
+    <p>Cleanmask.org aggregates DIY filtration-test hardware, as well as testing data of masks at different
+        particle size ranges, that aims at informing people about the action of their masks. 
+        The website can be </br>used to find the filtration rate of a specific brand of mask. 
+        During the Covid19 pandemic, there are many questions from the public as to what masks are trustworthy. 
+        Because professional testing labs </br>require much budget and time, 
+        we would like to show DIY testing results with only a small difference in accuracy.</p>
+    <h3>Can our data be trusted?</h3>
+    <p> We have verified that, although our data is not 1 to 1, it is in the same ballpark. 
+        If you want to see how we researched our data, go to the<a href="./setup.html"> Setup</a> section.</p>
+    <h3>Fast and easy.</h3>
+    <p>Follow the simple instructions at <a href= "./procedures.html">Procedure</a></p>
+    <h3>You can contribute.</h3>
+    <p>If you have any other accurate way of researching data regarding the safety of masks, you can submit that through the <a href= "./data.html">data</a> section</p>
 </div>
     </body>
 

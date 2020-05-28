@@ -1,0 +1,243 @@
+<html>
+    <body style="background-color:#031829;"></body>
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Mask</title>
+    <style>
+        .topnav{
+                overflow: hidden;
+                background-color: #010b13;
+            }
+            .topnav .title a{
+                float: left;
+                display: block;
+                color: white;
+                padding: 14px 16px;
+                font-size: 30px;
+                text-align: center;
+                overflow:hidden;
+                text-decoration: none;
+            }
+            .topnav .texts a{
+                float:left;
+                display:block;
+                color:white;
+                padding:14px 16px;
+                font-size:20px;
+                text-align:center;
+                overflow:hidden;
+                text-decoration:none;
+            }
+            .topnav .texts a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            .topnav .title a:hover{
+                background-color: black;
+                color:white;
+            }
+            .topnav a.active {
+                background-color: #2196F3;
+                color: white;
+            }
+            .topnav .search-container button:hover {
+                background: #ccc;
+            }
+            .header a{
+                color: black;
+            }
+            .SearchBar{
+                position: absolute;
+                top: 1378x;
+                left: 1004px; 
+            }
+            .SearchBar .text{
+                height: 133x;
+                width: 250px;
+                background-color: #ddd;
+                overflow: hidden;
+                visibility: 0.25;
+            }
+            .SearchBar input[type = text]{
+                padding: 23px;
+                font-size: 17px;
+                border: none;
+            }
+            .SearchBar .button{
+                height: 54px;
+                padding: 6px 10px;
+                margin-top: -66px;
+                margin-right: -302px;
+                width: 50px;
+                background-color: #ddd;
+                cursor: pointer;
+            }
+            .Searchbar .button button{
+                margin-top: -7px;
+                height: 67px;
+                width: 75px;
+                margin-right: 50px; 
+            }
+            .SearchBar .button:hover{
+                background: #ccc;
+            }
+            .glass{
+                margin-top: -2px;
+            }
+            th, td {
+            border: 1px solid;
+            border-collapse: collapse;
+            background-color:white;
+            
+        }
+        input {
+            border: none;
+        }
+        table{
+            margin-top:100px;
+        }
+    </style>
+    </head>
+    <body>
+    <div class = "topnav">
+        <div class = "title">
+            <a href="./index.html">Clean Mask</a>
+        </div>
+        <div class = "texts">
+        <a href="./about.html">About</a>
+        <a href="./procedures.html">Procedure</a>
+        <a href="./setup.html">Setup</a>
+        <a href="./data.html">Data</a>
+        <a href="./data input.html">Data Input</a>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/update.js"></script>
+<center>
+<table style="table-layout: fixed; border: 2px solid; border-collapse: collapse;">
+    <colgroup>
+    <col style="width: 70px">
+    <col style="width: 80px">
+    <col style="width: 100px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 50px">
+    <col style="width: 80px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th rowspan="2">Loading<br>particles</th>
+        <th rowspan="2">Mask<br>Type</th>
+        <th rowspan="2">Mask<br>Name</th>
+        <th colspan="6">Single-pass filtration efficiency</th>
+        <th colspan="6">Error bar</th>
+        <th rowspan="2">ΔP (pa)</th>
+        <th rowspan="2">vair (m/s)</th>
+        <th rowspan="2">T (°C)</th>
+        <th rowspan="2">RH (%)</th>
+        <th rowspan="2">Testing date (YYYY.MM.DD)</th>
+      </tr>
+      <tr>
+        <td>0.3μm</td>
+        <td>0.5<span style="font-weight:400;font-style:normal">μm</span></td>
+        <td>1<span style="font-weight:400;font-style:normal">μm</span></td>
+        <td>3<span style="font-weight:400;font-style:normal">μm</span></td>
+        <td>5<span style="font-weight:400;font-style:normal">μm</span></td>
+        <td>10<span style="font-weight:400;font-style:normal">μm</span></td>
+        <td>0.3<span style="font-weight:400;font-style:normal">μm</span></td>
+        <td>0.5<span style="font-weight:400;font-style:normal">μm</span></td>
+        <td>1<span style="font-weight:400;font-style:normal">μm</span></td>
+        <td>3<span style="font-weight:400;font-style:normal">μm</span></td>
+        <td>5<span style="font-weight:400;font-style:normal">μm</span></td>
+        <td>10<span style="font-weight:400;font-style:normal">μm</span></td>
+      </tr>
+      <form id = "my_mask">
+      <tr style="border: 2px solid; border-collapse: collapse;">
+        <td>
+            <input type="text" id="loading_particles" style="width: 70px;" placeholder="Ambient">
+        </td>
+        <td>
+            <input type="text" id="mask_type" style="width: 80px" placeholder="N95">
+        </td>
+        <td>
+            <input type="text" id="name" style="width: 100px" placeholder="3M1860">
+        </td>
+        <td>
+            <input type="text" id="efficiency_0.3" style="width: 50px" placeholder="99.87%">
+        </td>
+        <td>
+            <input type="text" id="efficiency_0.5" style="width: 50px" placeholder="100.00%">
+        </td>
+        <td>
+            <input type="text" id="efficiency_1" style="width: 50px" placeholder="100.00%">
+        </td>
+        <td>
+            <input type="text" id="efficiency_3" style="width: 50px" placeholder="100.00%">
+        </td>
+        <td>
+            <input type="text" id="efficiency_5" style="width: 50px" placeholder="null">
+        </td>
+        <td>
+            <input type="text" id="efficiency_10" style="width: 50px" placeholder="null">
+        </td>
+        <td>
+            <input type="text" id="error_0.3" style="width: 50px" placeholder="68.75%">
+        </td>
+        <td>
+            <input type="text" id="error_0.5" style="width: 50px" placeholder="87.48%">
+        </td>
+        <td>
+            <input type="text" id="error_1" style="width: 50px" placeholder="100.00%">
+        </td>
+        <td>
+            <input type="text" id="error_3" style="width: 50px" placeholder= "100.00%">
+        </td>
+        <td>
+            <input type="text" id="error_5" style="width: 50px" placeholder="100.00%">
+        </td>
+        <td>
+            <input type="text" id="error_10" style="width: 50px" placeholder="null">
+        </td>
+        <td>
+            <input type="text" id="pa" style="width: 50px" placeholder="255.5">
+        </td>
+        <td>
+            <input type="text" id="vair" style="width: 50px" placeholder="0.2">
+        </td>
+        <td>
+            <input type="text" id="t" style="width: 50px" placeholder="23.4">
+        </td>
+        <td>
+            <input type="text" id="rh" style="width: 50px" placeholder="20.1">
+        </td>
+        <td>
+            <input type="text" id="test_date" style="width: 80px" placeholder="YYYY.MM.DD">
+        </td>
+        <td>
+        <input type="submit" id="update"/>
+        </td>
+      </tr>
+    </form>
+    </thead>
+    </table>
+</center>
+    <br>
+
+    </body>
+
+</html>

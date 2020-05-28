@@ -97,15 +97,18 @@
                     color:white;
                     text-align:center;
                 }
+                .ui-widget{
+                    float:right;
+                    margin-top:-50px;
+                    margin-right:0px;
+                }
         </style>
         </head>
-        <body>                
-            <div class = "SearchBar">
-                <center>
-                <div class = "text"><input type="text" placeholder="Ex. Mask Name: Graphene"></div>
-                <div class = "button"><button type="submit"><i class="fa fa-search"><div class = glass><img src = "C:\Users\mjune\Downloads\magnifying glass.jpg" width = 65></div></i></button></div>
-            </center>
-        </div>
+        <body>               
+            <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
+        <script type="text/javascript" src="js/search.js"> </script> 
         <div class = "topnav">
             <div class = "title"><a href = ".\index.html">Clean Mask</a></div>
             <div class ="texts">
@@ -116,9 +119,12 @@
                     
                     <a href=".\setup.html">Setup</a>
                     <a href=".\data.html">Data</a>
+                    
+        <a href="./data input.html">Data Input</a>
                 </div>
     
         </div>
+        <div class= "ui-widget"><input type = "text" id = "name"><input type = "submit" id="submit"/></div>
     <div class = "date"><p>(Version: May 9, 2020)</p></div>
     <center>
         <div style="width: 1000">

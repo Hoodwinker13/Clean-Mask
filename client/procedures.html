@@ -93,15 +93,19 @@
             .paragraph{
                 color:white;
             }
+            .ui-widget{
+                float: right;
+                margin-right: 0px;
+                margin-top:-50px;
+            }
     </style>
     </head>
     <body>
-        <div class = "SearchBar">
-            <center>
-            <div class = "text"><input type="text" placeholder="Ex. Mask Name: Graphene"></div>
-            <div class = "button"><button type="submit"><i class="fa fa-search"><div class = glass><img src = "C:\Users\mjune\Downloads\magnifying glass.jpg" width = 65></div></i></button></div>
-        </center>
-    </div>
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
+        <script type="text/javascript" src="js/search.js"> </script>
+        
     <div class = "topnav">
         <div class = "title">
             <a href="./index.html">Clean Mask</a>
@@ -114,8 +118,11 @@
         
         <a href="./setup.html">Setup</a>
         <a href="./data.html">Data</a>
+        
+        <a href="./data input.html">Data Input</a>
     </div>
 </div>
+<div class= "ui-widget"><input type = "text" id = "name"><input type = "submit" id="submit"/></div>
 <div class = "paragraph">
     <p>
         <br><h2><strong><em><u>Procedures</u></em></strong><br><br></h2>
@@ -139,12 +146,12 @@ airflow/temperature meter at the air duct exhaust.<br>
 2. Ambient aerosol: simply use indoor air in the lab, temperature \(T = 25 ± °C\) (not controlled),
 relative humidity \(RH = 30 ± 20\%\) (not controlled), \(0.3\) μm partic<br>le number concentration &lt;
 \(10^4\) pcs/L, typical aerosol size range: \(0.3-1 μm.\)
-3. KCl aerosol: using \(10\) wt% KCl solution, pumping at 1 L/min. Temperature \(T = 25 ± °C\)
+3. KCl aerosol: using \(10\) wt% KCl solution, pumping at 1 L/min. Temperature \(T = 25 ±°C\)
 (not controlled), relative humidity \(RH = 30 ± 20\%\) (not controlled), \(0.3\) μm particle number
 concentration &lt; \(3×10^4\) pcs/L, typical aerosol size range: \(0.3-5 μm.\)<br>
 4. Filter pre-conditioning: none<br>
 5. Flow rate: face velocity &gt; \(0.1 m/s\) (preferably &gt; \(0.3 m/s,\) optional).<br>
-6. Number of tests: \(3]) total (optional).<br>
+6. Number of tests: \(3\) total (optional).<br>
 7. Filtration efficiency reported as a function of time (optional), filtration pressure reported as
 a function of time (optional), filtration efficiency reported as a function of particle size
 (optional)
