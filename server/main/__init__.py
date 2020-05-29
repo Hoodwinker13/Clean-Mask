@@ -140,20 +140,20 @@ def fileUpload():
 @main_bp.route('/update', methods=['POST'])
 def update() :
     data = request.get_json()
-
+    
     try:
         doc_data = {
                     'loading_particles' : data['loading_particles'],
                     'mask_type' : data['mask_type'],
                     'name' : data['name'],
-                    'efficiency_0.3' : data['efficiency_0.3'],
-                    'efficiency_0.5' : data['efficiency_0.5'],
+                    'efficiency_03' : data['efficiency_03'],
+                    'efficiency_05' : data['efficiency_05'],
                     'efficiency_1' : data['efficiency_1'],
                     'efficiency_3' : data['efficiency_3'],
                     'efficiency_5' : data['efficiency_5'],
                     'efficiency_10' : data['efficiency_10'],
-                    'error_0.3' : data['error_0.3'],
-                    'error_0.5' : data['error_0.5'],
+                    'error_03' : data['error_03'],
+                    'error_05' : data['error_05'],
                     'error_1' : data['error_1'],
                     'error_3' : data['error_3'],
                     'error_5' : data['error_5'],

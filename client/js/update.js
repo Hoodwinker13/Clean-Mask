@@ -3,14 +3,14 @@ $(document).ready(function() {
         var loading_particles = $("#loading_particles").val();
         var mask_type = $("#mask_type").val();
         var name = $("#name").val();
-        var efficiency_03 = $("#efficiency_0.3").val();
-        var efficiency_05 = $("#efficiency_0.5").val();
+        var efficiency_03 = $("#efficiency_03").val();
+        var efficiency_05 = $("#efficiency_05").val();
         var efficiency_1 = $('#efficiency_1').val();
         var efficiency_3 = $('#efficiency_3').val();
         var efficiency_5 = $('#efficiency_5').val();
         var efficiency_10 = $('#efficiency_10').val();
-        var error_03 = $('#error_0.3').val();
-        var error_05 = $('#error_0.5').val();
+        var error_03 = $('#error_03').val();
+        var error_05 = $('#error_05').val();
         var error_1 = $('#error_1').val();
         var error_3 = $('#error_3').val();
         var error_5 = $('#error_5').val();
@@ -26,14 +26,14 @@ $(document).ready(function() {
             "loading_particles" : loading_particles,
             "mask_type" : mask_type,
             "name" : name,
-            "efficiency_0.3" : efficiency_03,
-            "efficiency_0.5" : efficiency_05,
+            "efficiency_03" : efficiency_03,
+            "efficiency_05" : efficiency_05,
             "efficiency_1" : efficiency_1,
             "efficiency_3" : efficiency_3,
             "efficiency_5" : efficiency_5,
             "efficiency_10" : efficiency_10,
-            "error_0.3" : error_03,
-            "error_0.5" : error_05,
+            "error_03" : error_03,
+            "error_05" : error_05,
             "error_1" : error_1,
             "error_3" : error_3,
             "error_5" : error_5,
