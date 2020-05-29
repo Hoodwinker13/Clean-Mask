@@ -1,5 +1,4 @@
 <html>
-    <body style="background-color:#031829;"></body>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
       </script>
@@ -14,6 +13,9 @@
         .topnav{
                 overflow: hidden;
                 background-color: #010b13;
+                position:sticky;
+                top:0;
+                z-index: 2;
             }
             .topnav .title a{
                 float: left;
@@ -98,10 +100,26 @@
                 float: right;
                 margin-right: 0px;
                 margin-top:-50px;
+                position:sticky;
+            top:12;
+            z-index: 4;
             }
+            .paragraph{
+                text-align: center;
+                width:800px;
+                margin-left:280px;
+                font-size: 20px;
+            }
+            #select{
+            color:#010b13;
+            background-image: linear-gradient(to bottom, #808080, #FFFFFF);
+        }
+        .paragraph .list{
+            text-align:left;
+        }
     </style>
     </head>
-    <body>
+    <body style="background-color:#031829; margin:0px;">
         <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
@@ -114,13 +132,13 @@
         <div class = "texts">
         <a href="./about.html">About</a>
 
-        <a href="./procedures.html" style = "color:010b13;background-color: white">Procedure</a>
+        <a href="./procedures.html" id = "select" >Procedure</a>
    
         
         <a href="./setup.html">Setup</a>
         <a href="./data.html">Data</a>
         
-        <a href="./data input.html">Data Input</a>
+        <a href="./data_input.html">Data Input</a>
     </div>
 </div>
 <div class= "ui-widget"><input type = "text" id = "name"><input type = "submit" id="submit"/></div>
@@ -141,7 +159,9 @@ The pressure drop across the respirator filter was measured by a differential ga
 temperature, relative humidity, and filtration velocity were measured by an
 airflow/temperature meter at the air duct exhaust.<br>
 <br>
+
 <h2><strong><em><u>Notes</u></em></strong></h2>
+<div class = "list">
 <br>
 1. Sample size: \(5\) cm diameter disk (active area = \(19.6 cm^2\) )<br>
 2. Ambient aerosol: simply use indoor air in the lab, temperature \(T = 25 ± °C\) (not controlled),
@@ -157,6 +177,7 @@ concentration &lt; \(3×10^4\) pcs/L, typical aerosol size range: \(0.3-5 μm.\)
 a function of time (optional), filtration efficiency reported as a function of particle size
 (optional)
     </p>
+    </div>
 </div>
     </body>
 

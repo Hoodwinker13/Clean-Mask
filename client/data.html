@@ -1,5 +1,4 @@
 <html>
-    <body style="background-color: #031829;"></body>
     <head>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +7,9 @@
         .topnav{
                 overflow: hidden;
                 background-color:#010b13;
+                position:sticky;
+                top:0;
+                z-index: 2;
             }
             .topnav .title a{
                 float: left;
@@ -103,10 +105,13 @@
                 float: right;
                 margin-right: 0px;
                 margin-top:-50px;
+                position:sticky;
+            top:12;
+            z-index: 4;
             }
     </style>
     </head>
-    <body>
+    <body style="background-color:#031829; margin:0px;">
         <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
@@ -154,7 +159,7 @@
                     <col style="width: 50px">
                     <col style="width: 50px">
                     <col style="width: 50px">
-                    <col style="width: 80px">
+                    <col style="width: 100px">
                     </colgroup>
                     <thead>
                       <tr>

@@ -7,6 +7,9 @@
         .topnav{
                 overflow: hidden;
                 background-color: #010b13;
+                position:sticky;
+                top:0;
+                z-index: 2;
             }
             .topnav .title a{
                 float: left;
@@ -99,6 +102,17 @@
             position:absolute;
             margin-left:1300;
         }
+        .hl{
+            border-top: 1px solid grey;
+            width: 83px;
+            position:absolute;
+            margin-top: -1px;
+            margin-left: 176px;
+            position:sticky;
+            top:63;
+            z-index: 3;
+
+        }
         a{
             color:#FF0000;
         }
@@ -106,6 +120,19 @@
             margin-top:-50px;
             margin-right:0px;
             float:right;
+            position:sticky;
+            top:12;
+            z-index: 4;
+        }
+        p{
+            font-size: 16;
+        }
+        #select{
+            color:#010b13;
+            background-image: linear-gradient(to bottom, #808080, #FFFFFF);
+        }
+        .about h4{
+            font-size:20px;
         }
     </style>
     </head>
@@ -116,7 +143,7 @@
             <a href="./index.html">Clean Mask</a>
         </div>
         <div class = "texts">
-        <a href="./about.html"style = "color:010b13;background-color: white" >About</a>
+        <a href="./about.html" id = "select">About</a>
 
         <a href="./procedures.html">Procedure</a>
    
@@ -133,12 +160,13 @@
 <div class= "ui-widget"><input type = "text" id = "name"><input type = "submit" id="submit"/></div>
 <div class = "vl"></div>
 <div class = "vl2"></div>
+<div class = "hl"></div>
 <div class = "about">
     <h1>How good is the air filtration efficiency of my N95 or KN95 masks?</h1>
     <p>Cleanmask.org aggregates DIY filtration-test hardware, as well as testing data of masks at different
         particle size ranges, that aims at informing people about the action of their masks. 
     </br>The website can be used to find the filtration rate of a specific brand of mask. 
-        During the Covid19 pandemic, there are many questions from the public as to what masks are trustworthy. </br>
+        During the Covid19 pandemic, there are many questions from the public as to what masks are </br>trustworthy. 
         Because professional testing labs require much budget and time, 
         we would like to show DIY testing results with only a small difference in accuracy.</p>
     <h4>Can our data be trusted?</h4>
@@ -148,9 +176,9 @@
     <p>Follow the simple instructions at <a href= "./procedures.html">Procedure</a>.</p>
     <h4>You can contribute.</h4>
     <p>If you have any other accurate way of researching data regarding the safety of masks, 
-        you can submit that through the <a href= "./data.html">data</a> section.</p>
+        you can submit that through the <a href= "./data_input.html">Data Input</a> section.</p><br>
     <picture>
-        <img src= "surgical-mask-graphic-707x398-1.png" width = "707" height = "398">
+        <img src= "https://i.ibb.co/FbP16xb/assorted-n95-mask-3992946.jpg" width = "707" height = "398">
     </picture>
 </div>
     </body>

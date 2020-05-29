@@ -53,7 +53,7 @@ $(document).ready(function() {
 
             success: function(data) {
                 alert("Success! Your data has been transferred to the data section");
-                document.getElementById("my_mask").reset();
+                location.reload(true);
             },
             error: function(data) {
                 alert(data.responseText);

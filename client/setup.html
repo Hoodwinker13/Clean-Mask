@@ -5,8 +5,12 @@
         <title>Clean Mask</title>
         <style>
             .topnav{
-                    overflow: hidden;
+                    overflow:hidden;
                     background-color: #010b13;
+                    position:sticky;
+                    top:0;
+                    z-index: 2;
+                    margin-top:-50px;
                 }
                 .topnav .title a{
                     float: left;
@@ -46,41 +50,6 @@
                 .header a{
                     color: black;
                 }
-                .SearchBar{
-                    position: absolute;
-                    top: 1378x;
-                    left: 1004px; 
-                }
-                .SearchBar .text{
-                    height: 133x;
-                    width: 250px;
-                    background-color: white;
-                    overflow: hidden;
-                    visibility: 0.25;
-                }
-                .SearchBar input[type = text]{
-                    padding: 23px;
-                    font-size: 17px;
-                    border: none;
-                }
-                .SearchBar .button{
-                    height: 54px;
-                    padding: 6px 10px;
-                    margin-top: -66px;
-                    margin-right: -302px;
-                    width: 50px;
-                    background-color: white;
-                    cursor: pointer;
-                }
-                .Searchbar .button button{
-                    margin-top: -7px;
-                    height: 67px;
-                    width: 75px;
-                    margin-right: 50px; 
-                }
-                .SearchBar .button:hover{
-                    background: white;
-                }
                 .glass{
                     margin-top: -2px;
                 }
@@ -100,6 +69,9 @@
                     float:right;
                     margin-top:-50px;
                     margin-right:0px;
+                    position:sticky;
+            top:12;
+            z-index: 4;
                 }
                 .image1{
                     float:left;
@@ -112,16 +84,16 @@
                     margin-right:125px;
                 }
                 .text{
-                    width: 800px;
+                    width: 1000px;
                     float:left;
+                    color:white;
+                    margin-left:160px;
+                    font-size:20px;
                 }
         </style>
         </head>
         <body style = "margin:0px; background-color:#031829;">               
-            <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
-        <script type="text/javascript" src="js/search_out.js"> </script> 
+           
         <div class = "topnav">
             <div class = "title"><a href = ".\index.html">Clean Mask</a></div>
             <div class ="texts">
@@ -137,11 +109,15 @@
                 </div>
     
         </div>
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
+        <script type="text/javascript" src="js/search_out.js"> </script> 
         <div class= "ui-widget"><input type = "text" id = "name"><input type = "submit" id="submit"/></div>
-    <div class = "date"><p>(Version: May 9, 2020)</p></div>
+    <div class = "date"><p style = "margin-right:20px;">(Version: May 9, 2020)</p></div>
     <center>
         <div style="width: 1000">
-        <p style = "color:white">
+        <p style = "color:white; font-size:20px;">
 <left>This document describes the capabilities of the Ju Li’s Lab (in Department of Nuclear Science
 and Engineering, MIT) to perform tests on    filtration materials/devices (preferably with low air
 resistance, including HVAC filters, air purifiers, face masks and respirators), for filtration
@@ -149,21 +125,21 @@ efficiency and pressure drop. </left><br>
         </p>
         </div>
     </center>
-    <h1 style= "color:white"><strong><em><u>Equipment: </u></em></strong></h1>
+    <h1 style= "color:white; margin-left: 50px;"><strong><em><u>Equipment: </u></em></strong></h1>
     <center><img src=".\img\MaskExperiment1.PNG" alt = "Image for designing experiment" width = 1000>
 <br><div class = "caption"><p>a) Whole apparutus</p></div></center>
 <center><figure><div class = "image1"><img src = ".\img\MaskExperiment2.PNG" alt = "Image for designing experiment" width = 500><figcaption><p style = "font-size:20px">(b) Filter/mask test</p></figcaption></div></figure>
 
 <figure><div class = "image2"><img src = ".\img\MaskExperiment3.PNG" alt = "Image for designing experiment" width = 500><figcaption><p style = "font-size:20px">(c) Cartridge test</p></figcaption></div></figure></center>  
     <div class = "text">
-    <p style = "color:white" style="font-size: 18px;" style = "font-family: 'Times New Roman';"  >
+    <p>
         <br>The aerosol testing apparatus comprises the following pieces of equipment:<br><br>
 1) BGI Collision Nebulizer (for KCl aerosol generation) with a speed controlled pump<br>
 2) TSI 9306 optical particle counter (OPC)<br>
 3) TerraBloom 4&quot; duct fan with 15-100% speed controller. Airflow: 160 CFM; Power 18W;
 Pressure: 334 Pa.<br>
 4) EXTECH 45158 mini thermo-anemometer: airflow/temperature/relative humidity meter<br>
-5) DWYER 475 differential gauge, 0-4.982 kPa<br>
+5) DWYER 475 differential gauge, 0-4.982 kPa<br><br>
 The air duct is designed to test a small-scale purifier developed by our lab and now modified
 
 to test small samples of material (50 mm diameter disks), or small air purifier that can build
