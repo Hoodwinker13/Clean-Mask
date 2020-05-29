@@ -176,7 +176,7 @@ def update() :
     res_name = es.index(index='mask_completion', doc_type='mask_completion', body=doc_name)
 
     if not (isinstance(res_data, dict) or isinstance(res_name, dict)):
-        return 'Failed to Update :('
+        return create_response('failed', 400)
     else:
-        return 'Success!'
+        return create_response('success', 200)
     
