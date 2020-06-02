@@ -163,6 +163,8 @@ def update() :
                     't' : data['t'],
                     'rh' : data['rh'],
                     'test_date' : datetime.strptime(data['test_date'], '%Y.%m.%d'),
+                    'test_city' : data['test_city'],
+                    'comment' : data['comment']
                 }
         doc_name = {
                     'name' : data['name'],

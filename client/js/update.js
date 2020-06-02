@@ -20,6 +20,8 @@ $(document).ready(function() {
         var t = $('#t').val();
         var rh = $('#rh').val();
         var test_date = $('#test_date').val();
+        var test_city = $('#test_city').val();
+        var comment = $('#comment').val();
         
         var uri = "http://localhost:5000/update";
         var params = {
@@ -42,20 +44,34 @@ $(document).ready(function() {
             "vair" : vair,
             "t" : t,
             "rh" : rh,
-            "test_date" : test_date
-            
+            "test_date" : test_date,
+            "test_city" : test_city,
+            "comment" : comment
         };
         $.ajax({
             url:"http://localhost:5000/update",
             type:"POST",
             data:JSON.stringify(params),
             headers:{"Content-type":"application/json"},
-
-            success: function(data) {
-                alert("Success! Your data has been transferred to the data section");
-                location.reload(true);
-            },
-            error: function(data) {
+            success: function(data){var form = jQuery("#image")[0];
+            var formdata = new FormData(form);
+            formdata.append("file", jQuery("#file")[0].files[0]);
+            $.ajax({
+                url:"http://localhost:5000/fileUpload",
+                type:"POST",
+                data: formdata,
+                contentType:false,
+                cache:false,
+                processData:false,
+                success: function(data) {
+                    alert("Success! Your data has been transferred to the data section");
+                    location.reload(true);
+                },
+                error: function(data) {
+                    alert(data.responseText);
+                }
+            });},
+            error:function(data){
                 alert(data.responseText);
             }
         });
