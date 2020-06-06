@@ -9,9 +9,10 @@ werkzeug.cached_property = werkzeug.utils.cached_property
 from flask import Blueprint
 from flask import Response
 from flask import request
+from flask import render_template
 
 from .config import config_by_name
-
+root = os.path.dirname(__file__)
 from elasticsearch import Elasticsearch
 
 main_bp = Blueprint("main", __name__)
@@ -31,8 +32,27 @@ def create_response(body, status, content_type="application/json;charset=utf-8",
         "direct_passthrough": direct_passthrough,
     }
     return Response(**params)
-
-
+@main_bp.route('/index')
+def index():
+    return render_template('index.html')
+@main_bp.route('/about')
+def about():
+    return render_template('about.html')
+@main_bp.route('/setup')
+def setup():
+    return render_template('setup.html')
+@main_bp.route('/procedures')
+def procedures():
+    return render_template('procedures.html')
+@main_bp.route('/data')
+def data():
+    return render_template('data.html')
+@main_bp.route('/data_input')
+def data_input():
+    return render_template('data_input.html')
+@main_bp.route('/')
+def random():
+    return index()
 @main_bp.route('/ping', methods=['GET'])
 def get():
     '''
