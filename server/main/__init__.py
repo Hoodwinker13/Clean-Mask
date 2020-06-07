@@ -10,6 +10,7 @@ from flask import Blueprint
 from flask import Response
 from flask import request
 from flask import render_template
+from flask import redirect
 
 from .config import config_by_name
 root = os.path.dirname(__file__)
@@ -52,7 +53,7 @@ def data_input():
     return render_template('data_input.html')
 @main_bp.route('/')
 def random():
-    return index()
+    return redirect('/index')
 @main_bp.route('/ping', methods=['GET'])
 def get():
     '''
