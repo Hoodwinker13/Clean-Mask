@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    if(localStorage['Name'] == null){
+        alert("Please log in before entering data.");
+        window.location.href = '/index';
+    }
     $("#update").click(function() {
         var loading_particles = $("#loading_particles").val();
         var mask_type = $("#mask_type").val();
@@ -22,6 +26,7 @@ $(document).ready(function() {
         var test_date = $('#test_date').val();
         var test_city = $('#test_city').val();
         var comment = $('#comment').val();
+        var username = localStorage['Name'];
         
         var uri = "http://localhost:5000/update";
         var params = {
@@ -46,7 +51,8 @@ $(document).ready(function() {
             "rh" : rh,
             "test_date" : test_date,
             "test_city" : test_city,
-            "comment" : comment
+            "comment" : comment,
+            "username" : username
         };
         $.ajax({
             url:"http://localhost:5000/update",

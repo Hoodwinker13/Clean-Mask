@@ -44,6 +44,7 @@ class MakeDB() :
                             'test_date' : {'type':'date'},
                             'test_city' : {'type':'keyword'},
                             'comment' : {'type': 'text'},
+                            'username' : {'type': 'keyword'},
                         }
                     },
                 },
@@ -111,6 +112,7 @@ class MakeDB() :
                 'test_date' : datetime.strptime(data['test_date'], '%Y.%m.%d'),
                 'test_city' : 'null',
                 'comment' : 'null',
+                'username' : 'null',
             }
             doc_name = {
                 'name' : data['name'],

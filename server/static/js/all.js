@@ -63,6 +63,7 @@ $(document).ready(function() {
                 html += '<td style="width: 80px">' + value['test_date'] + '</td>';
                 html += '<td style = "width:100px">' + value['test_city'] + '</td>';
                 html += '<td style = "width:100px">' + value['comment'] + '</td>';
+                html += '<td style = "width:100px">' + value['username'] + '</td>';
                 html += '</tr>';
             });
             html += '</tbody>';
