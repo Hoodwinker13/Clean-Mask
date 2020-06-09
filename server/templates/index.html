@@ -137,11 +137,18 @@
                 width: auto;
                 max-width:100%;
                 max-height:100%;
+                z-index:1;
+                margin-top:-50px;
             }
             .footer{
                 color:white;
                 background-color: rgba(74, 9, 179, 0.795);
                 height:100px;
+            }
+            .sign-in{
+                width: 100%;
+                text-align: right;
+                z-index:2;
             }
     </style>
     </head>
@@ -160,12 +167,11 @@
     
     </div>
 </div>
-
+<div class = "sign-in"><div class="g-signin2" data-onsuccess="onSignIn"></div></div>
 <a href="https://www.vecteezy.com/free-vector/covid-19" style="color:black">Covid 19 Vectors by Vecteezy</a>
 <div class = "image">
 <img src ="{{url_for('static', filename='img/mask.jpg')}}">
 </div>
-<div class="g-signin2" data-onsuccess="onSignIn"></div>
 <script>function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
     if(localStorage['Name'] == null){

@@ -1,31 +1,31 @@
 $(document).ready(function() {
     var coloring = function(name){
         if(parseFloat(name) < 80){
-            return '<td style = "width:50px; background-color: red;">' + name + '</td>';
+            return '<td style = "width:70px; background-color: red;">' + name + '</td>';
         }
         else if(parseFloat(name) >= 99){
-            return '<td style = "width:50px; background-color: green;">' + name + '</td>';
+            return '<td style = "width:70px; background-color: green;">' + name + '</td>';
         }
         else if(parseFloat(name) >= 80 && parseFloat(name) < 99 ){
-            return '<td style = "width:50px; background-color: yellow;">' + name + '</td>';
+            return '<td style = "width:70px; background-color: yellow;">' + name + '</td>';
         }
         else{
-            return '<td style = "width:50px">' + name + '</td>';
+            return '<td style = "width:70px">' + name + '</td>';
         }
     }
 
     var error = function(name){
         if(parseFloat(name) > 5){
-            return '<td style = "width:50px; background-color: red;">' + name + '</td>';
+            return '<td style = "width:70px; background-color: red;">' + name + '</td>';
         }
         else if(parseFloat(name) <= 1){
-            return '<td style = "width:50px; background-color: green;">' + name + '</td>';
+            return '<td style = "width:70px; background-color: green;">' + name + '</td>';
         }
         else if(parseFloat(name) <= 5 && parseFloat(name) > 1 ){
-            return '<td style = "width:50px; background-color: yellow;">' + name + '</td>';
+            return '<td style = "width:70px; background-color: yellow;">' + name + '</td>';
         }
         else{
-            return '<td style = "width:50px">' + name + '</td>';
+            return '<td style = "width:70px">' + name + '</td>';
         }
     }
 
