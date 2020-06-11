@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import datetime
+import uuid
 
 import werkzeug
 from werkzeug.utils import secure_filename
@@ -13,12 +14,12 @@ from flask import render_template
 from flask import redirect
 
 from .config import config_by_name
-root = os.path.dirname(__file__)
+
 from elasticsearch import Elasticsearch
 
 main_bp = Blueprint("main", __name__)
 cfg = config_by_name[os.getenv("FLASK_ENV", "dev")]
-file_path = cfg.FILE_PATH
+img_static = cfg.FILE_PATH
 
 es = Elasticsearch(cfg.ES_HOST)
 
@@ -152,7 +153,7 @@ def fileUpload():
     file = request.files['file']
 
     try:
-        file.save(os.path.join(file_path, secure_filename(file.filename)))
+        file.save(os.path.join(img_static, str(uuid.uuid4())+os.path.splitext(file.filename)[1]))
     except Exception:
         return 'Upload Error :('
     else:

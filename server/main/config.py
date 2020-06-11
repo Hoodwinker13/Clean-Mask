@@ -13,7 +13,8 @@ class DevelopmentConfig(Config):
 
     ES_HOST = "http://localhost:9200"
     
-    FILE_PATH = os.path.join(os.path.dirname(__file__), 'static')
+    ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
+    FILE_PATH = os.path.join(ROOT_DIR, 'static/img')
 
 
 class ProductionConfig(Config):
@@ -23,6 +24,9 @@ class ProductionConfig(Config):
     PORT = "5000"
 
     ES_HOST = "http://localhost:9200"
+
+    ROOT_DIR = os.path.dirname(os.path.dirname(__file__))
+    FILE_PATH = os.path.join(ROOT_DIR, 'static/img')
 
 
 config_by_name = {
