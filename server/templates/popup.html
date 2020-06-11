@@ -1,0 +1,184 @@
+<html>
+    <head>
+    </head>
+    <body>
+        {% if img_file != "" %}
+        <div>
+        <img src="{{ url_for('static', filename='img/'+img_file) }} " style="width:300px; height:300px;">
+        </div>
+        <div>
+            <table style="table-layout: fixed; border: 2px solid; border-collapse: collapse; width:100%">
+                <colgroup>
+                    <col style="width: 70px">
+                    <col style="width: 80px">
+                    <col style="width: 100px">
+                    <col style="width: 60px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 100px">
+                    <col style="width: 100px">
+                    <col style="width: 100px">
+                    <col style="width:100px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th rowspan="2">Loading<br>particles</th>
+                        <th rowspan="2">Mask<br>Type</th>
+                        <th rowspan="2">Mask<br>Name</th>
+                        <th colspan="6">Single-pass filtration efficiency</th>
+                        <th colspan="6">Error bar</th>
+                        <th rowspan="2">ΔP (pa)</th>
+                        <th rowspan="2">vair (m/s)</th>
+                        <th rowspan="2">T (°C)</th>
+                        <th rowspan="2">RH (%)</th>
+                        <th rowspan="2">Testing date (YYYY.MM.DD)</th>
+                        <th rowspan="2">City</th>
+                        <th rowspan="2">Comments</th>
+                        <th rowspan="2">Name</th>
+                      </tr>
+                      <tr>
+                        <td>0.3μm</td>
+                        <td>0.5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>1<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>3<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>10<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>0.3<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>0.5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>1<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>3<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>10<span style="font-weight:400;font-style:normal">μm</span></td>
+                      </tr>
+            <tbody>
+                <tr>
+                <td style="width: 70px"> {{ mask_data.loading_particles }} </td>
+                <td style="width: 80px"> {{ mask_data.mask_type }} </td>
+                <td style="width: 100px"> {{ mask_data.name }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_03 }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_05 }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_1 }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_3 }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_5 }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_10 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_03 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_05 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_1 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_3 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_5 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_10 }} </td>
+                <td style="width: 50px"> {{ mask_data.pa }} </td>
+                <td style="width: 50px"> {{ mask_data.vair }} </td>
+                <td style="width: 50px"> {{ mask_data.t }} </td>
+                <td style="width: 50px"> {{ mask_data.rh }} </td>
+                <td style="width: 50px"> {{ mask_data.test_date }} </td>
+                <td style="width: 50px"> {{ mask_data.test_city }} </td>
+                <td style="width: 50px"> {{ mask_data.comment }} </td>
+                <td style="width: 50px"> {{ mask_data.username }} </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        {% else %}
+        <div>
+            <table style="table-layout: fixed; border: 2px solid; border-collapse: collapse; width:100%">
+                <colgroup>
+                    <col style="width: 70px">
+                    <col style="width: 80px">
+                    <col style="width: 100px">
+                    <col style="width: 60px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 70px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 50px">
+                    <col style="width: 100px">
+                    <col style="width: 100px">
+                    <col style="width: 100px">
+                    <col style="width:100px">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th rowspan="2">Loading<br>particles</th>
+                        <th rowspan="2">Mask<br>Type</th>
+                        <th rowspan="2">Mask<br>Name</th>
+                        <th colspan="6">Single-pass filtration efficiency</th>
+                        <th colspan="6">Error bar</th>
+                        <th rowspan="2">ΔP (pa)</th>
+                        <th rowspan="2">vair (m/s)</th>
+                        <th rowspan="2">T (°C)</th>
+                        <th rowspan="2">RH (%)</th>
+                        <th rowspan="2">Testing date (YYYY.MM.DD)</th>
+                        <th rowspan="2">City</th>
+                        <th rowspan="2">Comments</th>
+                        <th rowspan="2">Name</th>
+                      </tr>
+                      <tr>
+                        <td>0.3μm</td>
+                        <td>0.5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>1<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>3<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>10<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>0.3<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>0.5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>1<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>3<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>5<span style="font-weight:400;font-style:normal">μm</span></td>
+                        <td>10<span style="font-weight:400;font-style:normal">μm</span></td>
+                      </tr>
+            <tbody>
+                <tr>
+                <td style="width: 70px"> {{ mask_data.loading_particles }} </td>
+                <td style="width: 80px"> {{ mask_data.mask_type }} </td>
+                <td style="width: 100px"> {{ mask_data.name }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_03 }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_05 }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_1 }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_3 }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_5 }} </td>
+                <td style="width: 50px"> {{ mask_data.efficiency_10 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_03 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_05 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_1 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_3 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_5 }} </td>
+                <td style="width: 50px"> {{ mask_data.error_10 }} </td>
+                <td style="width: 50px"> {{ mask_data.pa }} </td>
+                <td style="width: 50px"> {{ mask_data.vair }} </td>
+                <td style="width: 50px"> {{ mask_data.t }} </td>
+                <td style="width: 50px"> {{ mask_data.rh }} </td>
+                <td style="width: 50px"> {{ mask_data.test_date }} </td>
+                <td style="width: 50px"> {{ mask_data.test_city }} </td>
+                <td style="width: 50px"> {{ mask_data.comment }} </td>
+                <td style="width: 50px"> {{ mask_data.username }} </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        {% endif %}
+    </body>
+</html>

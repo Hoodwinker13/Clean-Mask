@@ -34,27 +34,56 @@ def create_response(body, status, content_type="application/json;charset=utf-8",
         "direct_passthrough": direct_passthrough,
     }
     return Response(**params)
+
 @main_bp.route('/index')
 def index():
     return render_template('index.html')
+
 @main_bp.route('/about')
 def about():
     return render_template('about.html')
+
 @main_bp.route('/setup')
 def setup():
     return render_template('setup.html')
+
 @main_bp.route('/procedures')
 def procedures():
     return render_template('procedures.html')
+
 @main_bp.route('/data')
 def data():
     return render_template('data.html')
+
 @main_bp.route('/data_input')
 def data_input():
     return render_template('data_input.html')
+
 @main_bp.route('/')
 def random():
     return redirect('/index')
+
+@main_bp.route('/popup', methods=['GET'])
+def popup_data():
+    ids = request.args.get('ids')
+    res = es.search(
+        index='mask_data',
+        doc_type='mask_data',
+        body={
+            'query' : {
+                'term' : {
+                    '_id' : ids,
+                }
+            }
+        },
+    )
+
+    data = res['hits']['hits'][0]['_source']
+
+    img_file_name = data['img_name'] if data['img_name'] != 'null' else ''
+
+    return render_template('popup.html', img_file=img_file_name, mask_data=data)
+
 @main_bp.route('/ping', methods=['GET'])
 def get():
     '''
@@ -192,7 +221,7 @@ def update() :
         return create_response('File Upload Error', 400)
 
     rand_file_name = str(uuid.uuid4())+os.path.splitext(file.filename)[1]
-    
+
     doc_data['img_name'] = rand_file_name
 
     res_data = es.index(index='mask_data', doc_type='mask_data', body=doc_data) # index에 insert
