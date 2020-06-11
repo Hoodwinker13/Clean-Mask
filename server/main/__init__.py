@@ -148,17 +148,6 @@ def suggestion():
         'length' : len(completion_list)
     }, 200)
 
-@main_bp.route('/fileUpload', methods=['POST'])
-def fileUpload():
-    file = request.files['file']
-
-    try:
-        file.save(os.path.join(img_static, str(uuid.uuid4())+os.path.splitext(file.filename)[1]))
-    except Exception:
-        return 'Upload Error :('
-    else:
-        return 'Uploaded'
-
 @main_bp.route('/update', methods=['POST'])
 def update() :
     data = json.loads(request.form['mask_data'])
