@@ -10,6 +10,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clean Mask</title>
     <style>
+       body { 
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+            } 
+  
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+} 
         .topnav{
                 overflow: hidden;
                 background-color: #010b13;
@@ -117,6 +131,9 @@
         .paragraph .list{
             text-align:left;
         }
+        .notes{
+            text-align:left;
+        }
     </style>
     </head>
     <body style="background-color:#031829; margin:0px;">
@@ -178,6 +195,21 @@ a function of time (optional), filtration efficiency reported as a function of p
 (optional)
     </p>
     </div>
+<div class = "notes">
+    <p>
+        Though this is not a sufficient test to establish conformity with NIOSH, 
+        EN149 or GB2626 standards, we have shown that results using this set-up conforms
+         well to NIOSH pre-approval results (see in the Supplementary materials).<br>
+        We have collected data on a set of N95 masks (n = 10) exposed to various sterilization 
+        procedures using the equipment described here and a test to NIOSH standards at a 
+        commercial laboratory (ICS Laboratories, USA) equipped to perform pre-certification testing. 
+        Mask instantaneous filtration efficiency values measured using the two tests had a correlation 
+        coefficient of 0.89 and all masks that passed our testing also passed ICS tests. 
+        Nonetheless, the data described here results should be interpreted as a relative, 
+        not absolute, measures of filtration efficiency.
+    </p>
+</div>
+<img src="{{url_for('static', filename='img/graph_image.PNG')}}">
 </div>
     </body>
 

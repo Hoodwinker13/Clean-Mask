@@ -137,11 +137,18 @@
                 width: auto;
                 max-width:100%;
                 max-height:100%;
+                z-index:1;
+                margin-top:-50px;
             }
             .footer{
                 color:white;
                 background-color: rgba(74, 9, 179, 0.795);
                 height:100px;
+            }
+            .sign-in{
+                width: 100%;
+                text-align: right;
+                z-index:2;
             }
     </style>
     </head>
@@ -160,19 +167,29 @@
     
     </div>
 </div>
-
+<div class = "sign-in"><div class="g-signin2" data-onsuccess="onSignIn"></div></div>
 <a href="https://www.vecteezy.com/free-vector/covid-19" style="color:black">Covid 19 Vectors by Vecteezy</a>
 <div class = "image">
 <img src ="{{url_for('static', filename='img/mask.jpg')}}">
 </div>
-<div class="g-signin2" data-onsuccess="onSignIn"></div>
 <script>function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    if(localStorage['Name'] == null){
+    alert("You have successfully logged in");
+    }
+    localStorage['Name'] = profile.getName();
   }</script>
+  <a href="#" onclick="signOut();">Sign out</a>
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      localStorage.removeItem('Name');
+      alert("You have successfully logged out");
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script>
 <div class = "search">
     <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
