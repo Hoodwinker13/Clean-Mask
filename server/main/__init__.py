@@ -161,8 +161,8 @@ def fileUpload():
 
 @main_bp.route('/update', methods=['POST'])
 def update() :
-    data = request.get_json()
-    
+    data = json.loads(request.form['mask_data'])
+
     try:
         doc_data = {
                     'loading_particles' : data['loading_particles'],
@@ -197,8 +197,14 @@ def update() :
     except ValueError:
         return create_response('Data format Error', 400)
 
+    try:
+        file = request.files['file']
+    except Exception as e:
+        return create_response('File Upload Error', 400)
+
     res_data = es.index(index='mask_data', doc_type='mask_data', body=doc_data) # index에 insert
     res_name = es.index(index='mask_completion', doc_type='mask_completion', body=doc_name)
+    file.save(os.path.join(img_static, str(uuid.uuid4())+os.path.splitext(file.filename)[1]))
 
     if not (isinstance(res_data, dict) or isinstance(res_name, dict)):
         return create_response('failed', 400)
