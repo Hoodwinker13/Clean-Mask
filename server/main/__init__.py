@@ -188,12 +188,16 @@ def update() :
 
     try:
         file = request.files['file']
-    except Exception as e:
+    except Exception:
         return create_response('File Upload Error', 400)
+
+    rand_file_name = str(uuid.uuid4())+os.path.splitext(file.filename)[1]
+    
+    doc_data['img_name'] = rand_file_name
 
     res_data = es.index(index='mask_data', doc_type='mask_data', body=doc_data) # index에 insert
     res_name = es.index(index='mask_completion', doc_type='mask_completion', body=doc_name)
-    file.save(os.path.join(img_static, str(uuid.uuid4())+os.path.splitext(file.filename)[1]))
+    file.save(os.path.join(img_static, rand_file_name))
 
     if not (isinstance(res_data, dict) or isinstance(res_name, dict)):
         return create_response('failed', 400)

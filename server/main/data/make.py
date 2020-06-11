@@ -45,6 +45,7 @@ class MakeDB() :
                             'test_city' : {'type':'keyword'},
                             'comment' : {'type': 'text'},
                             'username' : {'type': 'keyword'},
+                            'img_name' : {'type':'text'},
                         }
                     },
                 },
@@ -113,6 +114,7 @@ class MakeDB() :
                 'test_city' : 'null',
                 'comment' : 'null',
                 'username' : 'null',
+                'img_name' : 'null',
             }
             doc_name = {
                 'name' : data['name'],
