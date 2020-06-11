@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import datetime
+import uuid
 
 import werkzeug
 from werkzeug.utils import secure_filename
@@ -10,14 +11,15 @@ from flask import Blueprint
 from flask import Response
 from flask import request
 from flask import render_template
+from flask import redirect
 
 from .config import config_by_name
-root = os.path.dirname(__file__)
+
 from elasticsearch import Elasticsearch
 
 main_bp = Blueprint("main", __name__)
 cfg = config_by_name[os.getenv("FLASK_ENV", "dev")]
-file_path = cfg.FILE_PATH
+img_static = cfg.FILE_PATH
 
 es = Elasticsearch(cfg.ES_HOST)
 
@@ -32,27 +34,56 @@ def create_response(body, status, content_type="application/json;charset=utf-8",
         "direct_passthrough": direct_passthrough,
     }
     return Response(**params)
+
 @main_bp.route('/index')
 def index():
     return render_template('index.html')
+
 @main_bp.route('/about')
 def about():
     return render_template('about.html')
+
 @main_bp.route('/setup')
 def setup():
     return render_template('setup.html')
+
 @main_bp.route('/procedures')
 def procedures():
     return render_template('procedures.html')
+
 @main_bp.route('/data')
 def data():
     return render_template('data.html')
+
 @main_bp.route('/data_input')
 def data_input():
     return render_template('data_input.html')
+
 @main_bp.route('/')
 def random():
-    return index()
+    return redirect('/index')
+
+@main_bp.route('/popup', methods=['GET'])
+def popup_data():
+    ids = request.args.get('ids')
+    res = es.search(
+        index='mask_data',
+        doc_type='mask_data',
+        body={
+            'query' : {
+                'term' : {
+                    '_id' : ids,
+                }
+            }
+        },
+    )
+
+    data = res['hits']['hits'][0]['_source']
+
+    img_file_name = data['img_name'] if data['img_name'] != 'null' else ''
+
+    return render_template('popup.html', img_file=img_file_name, mask_data=data)
+
 @main_bp.route('/ping', methods=['GET'])
 def get():
     '''
@@ -146,21 +177,10 @@ def suggestion():
         'length' : len(completion_list)
     }, 200)
 
-@main_bp.route('/fileUpload', methods=['POST'])
-def fileUpload():
-    file = request.files['file']
-
-    try:
-        file.save(os.path.join(file_path, secure_filename(file.filename)))
-    except Exception:
-        return 'Upload Error :('
-    else:
-        return 'Uploaded'
-
 @main_bp.route('/update', methods=['POST'])
 def update() :
-    data = request.get_json()
-    
+    data = json.loads(request.form['mask_data'])
+
     try:
         doc_data = {
                     'loading_particles' : data['loading_particles'],
@@ -195,8 +215,18 @@ def update() :
     except ValueError:
         return create_response('Data format Error', 400)
 
+    try:
+        file = request.files['file']
+    except Exception:
+        return create_response('File Upload Error', 400)
+
+    rand_file_name = str(uuid.uuid4())+os.path.splitext(file.filename)[1]
+
+    doc_data['img_name'] = rand_file_name
+
     res_data = es.index(index='mask_data', doc_type='mask_data', body=doc_data) # index에 insert
     res_name = es.index(index='mask_completion', doc_type='mask_completion', body=doc_name)
+    file.save(os.path.join(img_static, rand_file_name))
 
     if not (isinstance(res_data, dict) or isinstance(res_name, dict)):
         return create_response('failed', 400)

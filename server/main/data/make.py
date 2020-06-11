@@ -45,6 +45,7 @@ class MakeDB() :
                             'test_city' : {'type':'keyword'},
                             'comment' : {'type': 'text'},
                             'username' : {'type': 'keyword'},
+                            'img_name' : {'type':'text'},
                         }
                     },
                 },
@@ -113,12 +114,13 @@ class MakeDB() :
                 'test_city' : 'null',
                 'comment' : 'null',
                 'username' : 'null',
+                'img_name' : 'null',
             }
             doc_name = {
                 'name' : data['name'],
             }
-            res_data = self.es.index(index=index_name, doc_type=doc_type, id=idx+1, body=doc_data) # index에 insert
-            res_name = self.es.index(index=index_name2, doc_type=doc_type2, id=idx+1, body=doc_name)
+            res_data = self.es.index(index=index_name, doc_type=doc_type, body=doc_data) # index에 insert
+            res_name = self.es.index(index=index_name2, doc_type=doc_type2, body=doc_name)
             print(res_data, res_name)
     
 if __name__ == "__main__":

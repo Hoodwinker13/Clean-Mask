@@ -1,3 +1,12 @@
+
+function popup(id) {
+    var url = "/popup?ids=" + id;
+    var name = "mask data";
+    var option = "width=1000, height=500, location=no, toolbars=no, status=no";
+
+    window.open(url, name, option);
+}
+
 $(document).ready(function() {
     var coloring = function(name){
         if(parseFloat(name) < 80){
@@ -38,12 +47,13 @@ $(document).ready(function() {
             data = data['hits']['hits'];
             var html = '<tbody>';
             $.each(data, function (key, value) {
+                ids = value['_id'];
                 value = value['_source'];
-
+  
                 html += '<tr>';
                 html += '<td style="width: 70px">' + value['loading_particles'] + '</td>';
                 html += '<td style="width: 80px">' + value['mask_type'] + '</td>';
-                html += '<td style="width: 100px">' + value['name'] + '</td>';
+                html += `<td style="width: 100px; cursor:hand;" onclick="popup('${ids}');">` + value['name'] + '</td>';
                 html += coloring(value['efficiency_03']);
                 html += coloring(value['efficiency_05']);
                 html += coloring(value['efficiency_1']);
