@@ -93,11 +93,13 @@
             margin-top:-10px;   
         }
         .vl{
+            border-left: 1px solid grey;
             height: 800px;
             position:absolute;
             margin-left: 100px;
         }
         .vl2{
+            border-left: 1px solid grey;
             height:800px;
             position:absolute;
             margin-left:1300;
@@ -131,8 +133,19 @@
             color:#010b13;
             background-image: linear-gradient(to bottom, #808080, #FFFFFF);
         }
-        .about h4{
-            font-size:20px;
+        .bottom{
+            font-size: 15px;
+            color:white;
+            margin-bottom:-4px;
+            margin-left: 460px;
+            position:absolute;
+        }
+        .black-highlight{
+            position:relative;
+            background-color: #000000;
+            margin-bottom:-35px;
+            height:22;
+            width:2000px;
         }
     </style>
     </head>
@@ -140,34 +153,31 @@
         
     <div class = "topnav">
         <div class = "title">
-            <a href="./index">Clean Mask</a>
+            <a href="./index.html">Clean Mask</a>
         </div>
         <div class = "texts">
-        <a href="./about" id = "select">About</a>
+        <a href="./about.html" id = "select">About</a>
 
-        <a href="./procedures">Procedure</a>
+        <a href="./procedures.html">Procedure</a>
    
         
-        <a href="./setup">Setup</a>
-        <a href="./data">Data</a>
-        <a href="./data input">Data Input</a>
+        <a href="./setup.html">Setup</a>
+        <a href="./data.html">Data</a>
+        <a href="./data input.html">Data Input</a>
     </div>
 </div>
 <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
-        <script type="text/javascript" src="{{url_for('static', filename='js/search_out.js')}}"> </script>
+        <script type="text/javascript" src="js/search_out.js"> </script>
 <div class= "ui-widget"><input type = "text" id = "name"><input type = "submit" id="submit"/></div>
-<div class = "vl"></div>
-<div class = "vl2"></div>
-<div class = "hl"></div>
 <div class = "about">
     <h1>How good is the air filtration efficiency of my N95 or KN95 masks?</h1>
     <p>Cleanmask.org aggregates DIY filtration-test hardware, as well as testing data of masks at different
         particle size ranges, that aims at informing people about the action of their masks. 
     </br>The website can be used to find the filtration rate of a specific brand of mask. 
         During the Covid19 pandemic, there are many questions from the public as to what masks are </br>trustworthy. 
-        Because professional testing labs require much budget and time, 
+        Because professional testing labs require much budget and time,
         we would like to show DIY testing results with only a small difference in accuracy.</p>
     <h4>Can our data be trusted?</h4>
     <p> We have verified that, although our data is not 1 to 1, it is in the same ballpark. 
@@ -176,10 +186,14 @@
     <p>Follow the simple instructions at <a href= "./procedures.html">Procedure</a>.</p>
     <h4>You can contribute.</h4>
     <p>If you have any other accurate way of researching data regarding the safety of masks, 
-        you can submit that through the <a href= "./data_input.html">Data Input</a> section.</p><br>
+        you can submit that through the <a href= "./data input.html">Data Input</a> section.</p>
     <picture>
         <img src= "https://i.ibb.co/FbP16xb/assorted-n95-mask-3992946.jpg" width = "707" height = "398">
     </picture>
+</div>
+<div>
+    <div class = "black-highlight"> </div>
+    <p class = "bottom">Website made by Minjune Kim from Lexington High School and Thomas Li from Weston Middle School, Data provided by Enze Tianx.</p>
 </div>
     </body>
 

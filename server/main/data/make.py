@@ -86,7 +86,7 @@ class MakeDB() :
                                 names=['loading_particles', 'mask_type', 'name', 'efficiency_03', 'efficiency_05',
                                         'efficiency_1', 'efficiency_3', 'efficiency_5', 'efficiency_10',
                                         'error_03', 'error_05', 'error_1', 'error_3', 'error_5', 'error_10',
-                                        'pa', 'vair', 't', 'rh', 'test_date'
+                                        'pa', 'vair', 't', 'rh', 'test_date', 'test_city', 'comment', 'username'
                                     ]
                             )
         for idx, data in csv_data.iterrows():
@@ -110,10 +110,10 @@ class MakeDB() :
                 'vair' : data['vair'],
                 't' : data['t'],
                 'rh' : data['rh'],
-                'test_date' : datetime.strptime(data['test_date'], '%Y.%m.%d'),
-                'test_city' : 'null',
-                'comment' : 'null',
-                'username' : 'null',
+                'test_date' : datetime.strptime(data['test_date'], '%m/%d/%Y'),
+                'test_city' : data['test_city'],
+                'comment' : data['comment'],
+                'username' : data['username'],
                 'img_name' : 'null',
             }
             doc_name = {
