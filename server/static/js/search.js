@@ -96,7 +96,6 @@ $(document).ready(function() {
                 $.each(data, function (key, value) {
                     ids = value['_id'];
                     value = value['_source'];
-
                     html += '<tr>';
                     html += '<td style="width: 70px">' + value['loading_particles'] + '</td>';
                     html += '<td style="width: 80px">' + value['mask_type'] + '</td>';

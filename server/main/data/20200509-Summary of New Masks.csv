@@ -1,4 +1,4 @@
-No.,Loading particles,Type,MASKS,Single-pass filtration efficiency,,,,,,Error bar,,,,,,?P (pa),vair (m/s),T (°C),RH (%),Testing date,Test City,Comment,Username
+No.,Loading particles,Type,MASKS,Single-pass filtration efficiency,,,,,,Error bar,,,,,,?P (pa),vair (m/s),T (ï¿½C),RH (%),Testing date,Test City,Comment,Username
 ,,,,0.3?m,0.5?m,1?m,3?m,5?m,10?m,0.3?m,0.5?m,1?m,3?m,5?m,10?m,,,,,,,,
 1,Ambient,N95,3M1860,97.66%,99.05%,99.68%,100.00%,#DIV/0!,#DIV/0!,0.81%,0.38%,0.03%,0.00%,#DIV/0!,#DIV/0!,186.1,0.3,24.1,22.5,4/4/2020,Boston,,Enze Tian
 2,Ambient,N95,Halyard,99.91%,99.95%,100.00%,100.00%,100.00%,#DIV/0!,0.02%,0.05%,0.00%,0.00%,0.00%,#DIV/0!,190.1,< 0.1,24.3,22.7,4/4/2020,Boston,,Enze Tian

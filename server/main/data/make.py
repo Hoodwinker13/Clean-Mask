@@ -112,7 +112,7 @@ class MakeDB() :
                 'rh' : data['rh'],
                 'test_date' : datetime.strptime(data['test_date'], '%m/%d/%Y'),
                 'test_city' : data['test_city'],
-                'comment' : data['comment'],
+                'comment' : data['comment'] if type(data['comment']) != float else '',
                 'username' : data['username'],
                 'img_name' : 'null',
             }

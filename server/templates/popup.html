@@ -30,7 +30,6 @@
                     <col style="width: 50px">
                     <col style="width: 100px">
                     <col style="width: 100px">
-                    <col style="width: 100px">
                     <col style="width:100px">
                     </colgroup>
                     <thead>
@@ -46,7 +45,6 @@
                         <th rowspan="2">RH (%)</th>
                         <th rowspan="2">Testing date (YYYY.MM.DD)</th>
                         <th rowspan="2">City</th>
-                        <th rowspan="2">Comments</th>
                         <th rowspan="2">Name</th>
                       </tr>
                       <tr>
@@ -86,12 +84,12 @@
                 <td style="width: 50px"> {{ mask_data.rh }} </td>
                 <td style="width: 50px"> {{ mask_data.test_date }} </td>
                 <td style="width: 50px"> {{ mask_data.test_city }} </td>
-                <td style="width: 50px"> {{ mask_data.comment }} </td>
                 <td style="width: 50px"> {{ mask_data.username }} </td>
                 </tr>
             </tbody>
         </table>
         </div>
+        Comment: {{mask_data.comment}}
         {% else %}
         <div>
             <table style="table-layout: fixed; border: 2px solid; border-collapse: collapse; width:100%">
@@ -117,7 +115,6 @@
                     <col style="width: 50px">
                     <col style="width: 100px">
                     <col style="width: 100px">
-                    <col style="width: 100px">
                     <col style="width:100px">
                     </colgroup>
                     <thead>
@@ -133,7 +130,6 @@
                         <th rowspan="2">RH (%)</th>
                         <th rowspan="2">Testing date (YYYY.MM.DD)</th>
                         <th rowspan="2">City</th>
-                        <th rowspan="2">Comments</th>
                         <th rowspan="2">Name</th>
                       </tr>
                       <tr>
@@ -173,12 +169,12 @@
                 <td style="width: 50px"> {{ mask_data.rh }} </td>
                 <td style="width: 50px"> {{ mask_data.test_date }} </td>
                 <td style="width: 50px"> {{ mask_data.test_city }} </td>
-                <td style="width: 50px"> {{ mask_data.comment }} </td>
                 <td style="width: 50px"> {{ mask_data.username }} </td>
                 </tr>
             </tbody>
         </table>
         </div>
+        Comment: {{mask_data.comment}}
         {% endif %}
     </body>
 </html>
